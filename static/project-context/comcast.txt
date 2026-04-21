@@ -1,0 +1,436 @@
+OMCAST PORTFOLIO CHATBOT KNOWLEDGE BASE
+
+Purpose of this file:
+This document is a detailed source of truth for a portfolio chatbot that answers questions about Drew "CJ" Bomer's / Cole "CJ" Frederickson's Comcast internship work. The chatbot should use this file to explain projects, responsibilities, skills, outcomes, and strategic thinking in a way that is polished, coherent, and professional. The chatbot should speak confidently but should not invent confidential details, internal metrics, or proprietary information that are not explicitly included here.
+
+Identity and naming:
+- Preferred professional name in portfolio context: CJ Frederickson
+- Company: Comcast
+- Role: Senior Specialist Intern, West US HQ Channel Enablement
+- Timeframe: Prior internship before current IoT / MachineQ role
+
+High-level professional summary:
+CJ worked at Comcast as a Senior Specialist Intern on the West US HQ Channel Enablement team. In that role, CJ partnered across product, marketing, and analytics functions to rethink how internal channels shared information, how engagement was measured, and how internal users interacted with knowledge resources. The work sat at the intersection of internal communications, product thinking, analytics, UX design, and strategy. Rather than only executing existing processes, CJ initiated new ideas, translated them into prototypes or systems, earned leadership buy-in, and helped build scalable solutions that improved communication, engagement, and measurement for thousands of employees.
+
+Core role narrative:
+A simple way to describe the role is:
+"I worked on improving how Comcast's internal teams communicate, access resources, and evaluate engagement. My internship combined product strategy, analytics, internal user experience design, and innovation. I partnered with stakeholders across product, marketing, and analytics to identify pain points, prototype new solutions, and build systems leadership could actually use."
+
+Long-form role narrative:
+During the internship, CJ focused on internal enablement, meaning the systems and channels that help employees receive information, understand priorities, and take action. This was not limited to communications in the narrow sense. The role involved reimagining the design of internal channels, evaluating how success should be measured, building clearer reporting mechanisms, and creating product-style concepts that made information more accessible and engaging. The work also involved strategic framing: identifying what internal users needed, understanding how leadership evaluated impact, and creating tools and interfaces that connected those two perspectives.
+
+What made the role notable is that CJ did not just support existing workflows. CJ originated new product concepts, pitched ideas to leadership, secured VP-level buy-in, and created deliverables that were adopted by the team. The internship included both execution and strategy: CJ launched an audio-first engagement channel, consolidated fragmented data into a dashboard framework, authored a guide on using AI and analytics in program enablement, designed new interfaces for Comcast's internal knowledge hub mySource, and prototyped a competitive strategy tool to help visualize Comcast's position relative to competitors.
+
+Main themes of the internship:
+1. Product thinking inside a large organization
+CJ approached internal tools and communication channels the way a product manager or product strategist would. Instead of asking only "What content do we need to send?" CJ asked questions like: How do users consume information? What format reduces friction? What behavior are we trying to drive? What makes an internal tool intuitive and engaging?
+
+2. Translating data into decision-making
+A major part of the work was reducing complexity around analytics. Internal teams often had data spread across different reporting systems, such as Tableau and Power BI. CJ's contribution was to rethink measurement in a way that made it easier for stakeholders to interpret performance and act on it.
+
+3. UX and interface design for internal audiences
+CJ designed and prototyped interfaces not for external consumers but for internal Comcast employees. That required balancing usability, clarity, scalability, and compatibility with existing systems.
+
+4. Strategic communication and stakeholder alignment
+Because the work crossed departments and involved leadership review, CJ had to communicate ideas in ways that resonated with different audiences: product teams, analysts, enablement leaders, and executives.
+
+5. Innovation with practical adoption
+The projects were not just theoretical. The strongest examples involved tangible adoption, including a live interface in mySource and a dashboard framework used by the team.
+
+How to summarize the internship in one sentence:
+"At Comcast, I worked at the intersection of product, analytics, and internal communications, building scalable tools and concepts that improved how employees access information, how teams measure engagement, and how leadership evaluates impact."
+
+How to summarize the internship in two sentences:
+"As a Senior Specialist Intern on Comcast's West US HQ Channel Enablement team, I partnered with product, marketing, and analytics stakeholders to redesign how internal channels deliver information and measure performance. My work included launching a new audio-first engagement channel, building an engagement scorecard, authoring an AI and analytics playbook, and designing internal UI and strategy tool prototypes that improved accessibility, clarity, and decision-making."
+
+PROJECT 1: AUDIO-FIRST ENGAGEMENT CHANNEL
+Project title:
+Audio-First Engagement Channel
+
+Elevator pitch:
+CJ launched a new audio-first internal engagement channel designed to make updates more accessible and easier to consume. The concept drew on evolving content consumption habits and applied product thinking to internal communications. The initiative received VP-level buy-in and launched in Q3 2025.
+
+What problem it addressed:
+Many internal communication channels rely on text-heavy formats that can be difficult to process quickly, especially in busy work environments. CJ identified an opportunity to rethink internal engagement by using an audio-first format that aligned better with modern consumption behaviors and reduced friction for employees who needed quick, accessible updates.
+
+Objective:
+The goal was to create a more engaging and scalable format for internal communications by introducing an audio-first channel that fit naturally into employee workflows.
+
+CJ's role:
+- Initiated the concept
+- Framed the business and user rationale
+- Moved the idea through an agile-style development process
+- Presented it to leadership
+- Earned VP-level support
+- Helped drive it toward launch
+
+What makes this project impressive:
+This project shows initiative, product sense, and leadership communication. CJ was not merely assigned to maintain an existing channel; CJ identified a gap, proposed a novel format, aligned stakeholders, and helped launch it. The ability to move an internal concept from idea to leadership-approved execution is a major strength.
+
+Skills demonstrated:
+- Product ideation
+- Agile product development
+- Internal communications strategy
+- Leadership presentation
+- Stakeholder management
+- Change management
+- User-centered design thinking
+
+How the chatbot should explain the strategic insight behind it:
+The deeper insight was that internal communications should be designed around user behavior, not just organizational habit. Audio-first delivery reflected a recognition that employees increasingly value concise, flexible, low-friction content formats. By rethinking the medium, CJ helped the team improve accessibility and engagement rather than simply increasing message volume.
+
+Suggested interview-style answer:
+"One of my favorite projects was launching an audio-first engagement channel at Comcast. I saw that many internal updates were still optimized for text-heavy consumption, even though employees often need information in formats that are easier to absorb quickly. I helped shape and pitch an audio-first concept, moved it through an agile-style process, earned VP-level buy-in, and helped get it launched in Q3 2025. What I liked most about that project was that it blended product thinking with communication strategy: the real question wasn't just what we were saying, but how employees actually wanted to engage with it."
+
+PROJECT 2: KPI INNOVATION / ENGAGEMENT SCORECARD
+Project title:
+KPI Innovation: Unified Engagement Scorecard / Dashboard
+
+Elevator pitch:
+CJ consolidated fragmented reporting from Tableau and Power BI into an easier-to-use engagement scorecard and dashboard framework that was adopted by the team.
+
+What problem it addressed:
+Internal teams often had access to data, but not always in a format that made performance easy to interpret. When information lives across multiple tools and dashboards, stakeholders can struggle to extract clear meaning or act on the data efficiently. CJ addressed this by creating a more unified and accessible framework for understanding engagement.
+
+Objective:
+The goal was to simplify performance measurement and provide the team with a practical, streamlined way to evaluate engagement across internal channels.
+
+CJ's role:
+- Assessed existing reporting structures
+- Identified fragmentation between Tableau and Power BI sources
+- Reframed what metrics mattered most
+- Built a clearer scorecard / dashboard concept
+- Delivered a tool the team adopted for easier interpretation and use
+
+What makes this project impressive:
+This was not just dashboard building. It was KPI design and information simplification. The valuable contribution was defining a clearer measurement model and translating complex or fragmented reporting into a usable decision-making tool.
+
+Skills demonstrated:
+- Analytics strategy
+- KPI design
+- Data synthesis
+- Dashboard thinking
+- Cross-functional collaboration
+- Business communication
+- Translating technical outputs into user-friendly formats
+
+How the chatbot should explain the strategic insight behind it:
+The strategic value came from recognizing that having data is not the same as having clarity. CJ improved the team's ability to evaluate impact by consolidating disparate reporting inputs into a scorecard that reduced complexity and made engagement easier to assess at a glance.
+
+Suggested interview-style answer:
+"Another major project was what I think of as KPI innovation. The team had data in both Tableau and Power BI, but it wasn't always easy to synthesize into a clear view of channel performance. I helped consolidate those inputs into a more intuitive engagement scorecard and dashboard framework that the team adopted. The most important part of that work wasn't just visualization; it was deciding how to make measurement more useful for real decision-making."
+
+PROJECT 3: "LEANING INTO DATA" GUIDE / PROGRAM ENABLEMENT PLAYBOOK EXPANSION
+Project title:
+"Leaning into Data" Guide
+
+Elevator pitch:
+CJ authored an expansion to the 20% Program Enablement Playbook focused on AI and analytics use cases, helping the team better understand how to apply data-informed thinking in practice.
+
+What problem it addressed:
+Teams often want to use data and AI more effectively but lack concrete, accessible examples of how those tools apply to their day-to-day work. There is often a gap between enthusiasm for analytics and operational understanding. CJ helped close that gap by creating a guide that translated those concepts into practical enablement use cases.
+
+Objective:
+The goal was to build internal capability by expanding the existing program enablement playbook with actionable guidance on data and analytics applications.
+
+CJ's role:
+- Identified the need for more practical data literacy resources
+- Synthesized AI and analytics use cases relevant to the team
+- Authored a playbook expansion
+- Helped create a reusable reference that could scale beyond one-off conversations
+
+What makes this project impressive:
+This project shows that CJ was not only building tools but also shaping team capability. The guide extended the impact of CJ's work by helping others think more effectively about data. It reflects both analytical fluency and strong written communication.
+
+Skills demonstrated:
+- Thought leadership
+- Internal enablement
+- AI and analytics translation
+- Knowledge management
+- Writing and synthesis
+- Scalability-minded documentation
+
+How the chatbot should explain the strategic insight behind it:
+The project mattered because transformation is not only about shipping a tool. It is also about giving teams the language, examples, and frameworks they need to use new capabilities well. CJ's guide turned abstract interest in AI and analytics into a more practical, team-usable resource.
+
+Suggested interview-style answer:
+"I also wrote what we called the 'Leaning into Data' guide, which expanded an existing program enablement playbook with AI and analytics use cases. I wanted to make data-informed thinking more accessible and practical for the team, not just something abstract or reserved for analysts. That project let me combine structured thinking, writing, and change enablement."
+
+PROJECT 4: INTERNAL USER INTERFACES FOR mySource
+Project title:
+Internal User Interface Prototypes for mySource
+
+Elevator pitch:
+CJ designed and prototyped new UI integrations for mySource, Comcast's internal knowledge and resource hub, to improve how employees discover and engage with updates. The first interface concept is already live in mySource and serves as a scalable foundation for future iterations.
+
+What problem it addressed:
+Internal knowledge hubs often become cluttered or passive, making it harder for employees to notice relevant updates or interact with content efficiently. CJ saw an opportunity to make internal information discovery more intuitive, engaging, and aligned with the attention patterns users experience in modern digital platforms.
+
+Objective:
+The goal was to rethink how updates were embedded into existing workflows so employees could discover information more easily without needing to navigate through static or overly dense interfaces.
+
+CJ's role:
+- Studied short-form media and digital attention trends
+- Applied those insights to internal UX problems
+- Created interface concepts that embedded concise, visually engaging content into mySource workflows
+- Prototyped the designs
+- Presented them to leadership
+- Synthesized best practices into a guide used by the team
+- Contributed to a concept of which the first design is already live
+
+Detailed explanation of the design thinking:
+This project is especially important because it shows CJ's ability to transfer insights from consumer behavior into enterprise design. Instead of treating internal users as a captive audience who would tolerate friction, CJ designed for their real attention constraints. The prototypes emphasized concise, embedded, visually digestible content that could fit into existing routines rather than requiring users to seek out information separately.
+
+This approach suggests a mature product mindset: good design is not about making something flashy, but about making desired behavior easier. By embedding updates directly into natural workflows and making them easier to scan and engage with, CJ improved both accessibility and relevance.
+
+What makes this project impressive:
+- It applies consumer UX insight to enterprise software / internal platforms
+- It combines product design, research synthesis, and strategic communication
+- It led to real adoption, since the first interface is already live
+- It created a scalable model for future iterations rather than a one-off mockup
+
+Skills demonstrated:
+- UX / UI design
+- Product prototyping
+- Human-centered design
+- Research synthesis
+- Internal platform innovation
+- Stakeholder testing and presentation
+- Workflow design
+
+How the chatbot should explain the strategic insight behind it:
+The real contribution was not just a prettier interface. CJ rethought the relationship between content and workflow. The design philosophy was that internal updates should meet users where they already are, in formats they can process quickly, rather than asking them to work harder to find information.
+
+Suggested interview-style answer:
+"One project I loved was redesigning parts of mySource, Comcast's internal knowledge hub. I created UI concepts that made updates more concise, embedded, and visually engaging, drawing on ideas from short-form media and digital attention research. What was exciting was that this wasn't just speculative design: the first interface concept is already live in mySource, and the broader design approach helped create a scalable foundation for future iterations."
+
+PROJECT 5: COMPETITIVE STRATEGY TOOL PROTOTYPE
+Project title:
+Competitive Strategy Tool Prototype
+
+Elevator pitch:
+CJ designed an early-stage prototype for a tool that would help Comcast visualize how its offerings perform relative to key competitors. The concept focused on making market intelligence more intuitive, interactive, and actionable for strategy stakeholders.
+
+What problem it addressed:
+Competitive information is often dense, fragmented, or difficult to act on quickly. Strategy teams need ways to compare offerings, assess strengths and weaknesses, adjust key performance indicators, and identify opportunities without getting lost in static or overly complex information structures.
+
+Objective:
+The goal was to create an interface concept where users could click through KPIs, compare Comcast to competitors side by side, surface differentiators, and identify strategic focus areas.
+
+CJ's role:
+- Defined the problem in terms of usability and strategic clarity
+- Designed layouts and interaction concepts
+- Framed the tool around dynamic comparison and decision support
+- Used placeholder screens for confidentiality while still demonstrating the product and strategy logic
+
+Detailed explanation of the strategic value:
+This project shows CJ's ability to operate in an ambiguous, early-stage strategy environment. Instead of only analyzing competitor information in a static deck or spreadsheet, CJ explored how a productized experience could make strategy work more usable. The prototype reflects the idea that market intelligence is more valuable when users can interact with it, adjust inputs, and quickly understand where a company leads, where it lags, and where there may be growth opportunities.
+
+This also demonstrates CJ's strength in translating abstract strategic needs into a user-centered interface. The point was not simply to display data, but to make strategic comparisons clear and actionable.
+
+What makes this project impressive:
+- It bridges corporate strategy and product design
+- It demonstrates initiative beyond standard intern expectations
+- It shows comfort with ambiguity and concept development
+- It turns complex competitive information into a usable interface concept
+
+Skills demonstrated:
+- Strategic thinking
+- Competitive analysis framing
+- Product prototyping
+- UX for analytical tools
+- Information architecture
+- Executive communication
+
+How the chatbot should explain confidentiality:
+The tool showcased in the portfolio uses placeholder screens. That is intentional and necessary because the underlying content relates to internal competitive insights. The value of the project lies in the design logic, strategic framing, and interaction model rather than in exposing actual proprietary data.
+
+Suggested interview-style answer:
+"I also built an early-stage prototype for a Competitive Advantage Tool that would help Comcast visualize how its offerings compare with key competitors. The concept let users click through KPIs, compare strengths side by side, and identify opportunities for growth. Because of confidentiality, the version I can show uses placeholder screens, but the underlying work was about translating complex market intelligence into a more intuitive, decision-friendly interface."
+
+CROSS-PROJECT TAKEAWAYS
+What all of these projects have in common:
+Across all of these projects, CJ consistently worked on one broader problem: reducing friction between information and action inside a large organization. Sometimes that meant changing the format of information, as in the audio-first channel. Sometimes it meant improving the interface through which people consumed information, as in mySource. Sometimes it meant making performance data easier to understand, as in the KPI scorecard. Sometimes it meant helping teams build fluency with new capabilities, as in the data guide. And sometimes it meant translating strategy into an interactive tool concept, as in the competitor prototype.
+
+The connecting thread is that CJ repeatedly improved clarity, accessibility, and usability. This is important because it shows a coherent professional identity rather than a random collection of internship tasks.
+
+Best synthesis statement:
+"The common thread across my Comcast projects was making internal systems more usable, measurable, and strategically effective. Whether I was building a channel, designing an interface, authoring a guide, or prototyping a strategy tool, I was focused on helping people access information more easily and make better decisions with it."
+
+Key strengths illustrated by the internship:
+- Strong product instincts
+- Ability to identify unmet needs and originate solutions
+- Clear written and verbal communication
+- Comfort working across technical and non-technical teams
+- Ability to simplify complex information
+- Leadership presence, especially in presenting to senior stakeholders
+- Strong UX and prototyping mindset
+- Strategic thinking about both users and organizations
+
+HOW TO POSITION THIS EXPERIENCE FOR DIFFERENT AUDIENCES
+For consulting / strategy roles:
+Emphasize problem-solving, cross-functional influence, leadership buy-in, and the ability to translate ambiguity into structured solutions. The strongest storyline is that CJ identified inefficiencies in communication, measurement, and internal user experience, then built practical frameworks and tools that improved clarity and decision-making.
+
+Suggested consulting framing:
+"At Comcast, I worked on internal enablement challenges that sat across communications, analytics, and strategy. I helped identify gaps in how information was delivered and measured, built new concepts and frameworks to address them, and earned stakeholder buy-in to move those ideas toward adoption."
+
+For product management roles:
+Emphasize user needs, interface design, prototyping, workflow integration, and iteration. The strongest storyline is that CJ treated internal tools and channels like products and designed around user behavior.
+
+Suggested PM framing:
+"My Comcast internship involved a lot of product-style thinking. I worked on identifying user friction, prototyping new experiences, defining better ways to measure success, and getting stakeholders aligned around more scalable solutions."
+
+For marketing / communications roles:
+Emphasize engagement, content delivery, channel strategy, and audience-centered communication design. The strongest storyline is that CJ improved how internal audiences received and acted on information.
+
+Suggested marketing framing:
+"I focused on channel innovation and engagement strategy, helping Comcast rethink how internal audiences consumed content and how channel performance was measured."
+
+For UX / design conversations:
+Emphasize research synthesis, interface concepts, workflow design, and translating digital attention patterns into usable enterprise experiences.
+
+Suggested UX framing:
+"I applied user-centered design principles to internal enterprise systems, especially by designing interfaces and content experiences that fit real user behavior rather than forcing users to adapt to rigid workflows."
+
+LIKELY PORTFOLIO QUESTIONS AND ANSWERS
+Question: What did you actually do at Comcast?
+Answer:
+CJ worked as a Senior Specialist Intern on Comcast's West US HQ Channel Enablement team. The role involved improving how internal information was delivered, measured, and experienced. CJ partnered with product, marketing, and analytics teams to launch new channel concepts, build clearer engagement measurement systems, author internal enablement resources, and prototype interfaces and tools for internal users and strategy stakeholders.
+
+Question: Was your work more product, strategy, analytics, or communications?
+Answer:
+It was a blend of all four. The product side showed up in ideation, prototyping, and workflow design. The strategy side showed up in leadership framing, competitive tool design, and KPI definition. The analytics side showed up in building clearer measurement systems. The communications side showed up in rethinking how internal audiences consumed and engaged with information. That combination is one of the most distinctive things about the internship.
+
+Question: What project are you most proud of?
+Answer:
+A strong answer is the audio-first engagement channel or the mySource interface work, depending on the audience. The audio-first channel is a great example of taking an idea from concept to launch with VP buy-in. The mySource work is a great example of applying design thinking to a real internal platform and seeing the first interface go live.
+
+Question: How did you measure impact?
+Answer:
+The portfolio should avoid inventing unsupported numerical claims. A safe and strong answer is that CJ improved communication, accessibility, engagement measurement, and internal usability for teams serving thousands of employees. Where appropriate, the chatbot can say that the engagement scorecard was adopted by the team, the audio-first initiative launched in Q3 2025, and the first mySource interface concept is already live. It should not add specific usage metrics unless they are provided elsewhere.
+
+Question: Did you work directly with leadership?
+Answer:
+Yes. One of the strongest examples is that CJ secured VP-level buy-in for the audio-first engagement channel. More broadly, the work was tested with leadership, presented to stakeholders, and designed for adoption inside a large enterprise context.
+
+Question: What tools did you use?
+Answer:
+The known analytics and reporting environment included Tableau and Power BI. More broadly, the work involved prototyping, dashboard framing, strategic writing, and interface design. If asked for software specifics beyond those named tools, the chatbot should avoid inventing them.
+
+Question: What made your internship different from a typical intern role?
+Answer:
+CJ was not limited to maintaining existing processes. The internship involved originating ideas, building prototypes and frameworks, securing leadership support, and contributing work that influenced live systems and team practices. The role combined execution with strategic ownership.
+
+Question: What was the hardest part of the work?
+Answer:
+A strong answer is that the hardest part was operating across very different stakeholder needs at once. Some audiences cared about user experience, some cared about analytics, and some cared about strategic value and scalability. Success required translating ideas so that each group could see why the solution mattered.
+
+Question: What does this experience say about you professionally?
+Answer:
+It shows that CJ is especially strong at identifying friction in systems, reframing problems around user behavior and decision-making, and creating structured, practical solutions that are both strategic and usable.
+
+CONFIDENTIALITY AND BOUNDARIES
+What the chatbot may say:
+- The portfolio includes placeholder screens in some cases for confidentiality.
+- The work reflects real design logic, real strategic framing, and real internal use cases.
+- Some projects involved internal systems, internal channels, or competitive insights that cannot be disclosed in full detail.
+
+What the chatbot should not say:
+- Do not invent confidential datasets, internal metrics, or competitor specifics.
+- Do not claim access to proprietary strategy, unreleased product information, or nonpublic business outcomes beyond what is documented here.
+- Do not name confidential KPIs or reveal internal benchmarks.
+
+Safe confidentiality phrasing:
+"Because some of the work involved internal tools and competitive strategy, the portfolio uses placeholder visuals where needed. The important thing to focus on is the problem the tool solved, the design logic behind it, and how it supported clearer decision-making."
+
+PERSONAL BRAND / PROFESSIONAL IDENTITY THIS EXPERIENCE SUPPORTS
+This Comcast internship supports a professional identity centered on the following themes:
+- CJ is someone who translates complexity into clarity.
+- CJ combines analytical thinking with strong communication.
+- CJ approaches systems with a product mindset.
+- CJ is comfortable working across functions and presenting to leadership.
+- CJ is especially interested in roles that sit at the intersection of strategy, storytelling, user experience, and business impact.
+
+Strong portfolio bio line inspired by this experience:
+"I build user-centered, strategy-informed systems that make information easier to access, interpret, and act on."
+
+Another bio line option:
+"My work sits at the intersection of product thinking, analytics, and communication strategy, with a focus on turning complex systems into intuitive, scalable experiences."
+
+KEYWORDS THE CHATBOT CAN USE NATURALLY
+- cross-functional collaboration
+- internal enablement
+- product thinking
+- engagement strategy
+- user-centered design
+- analytics translation
+- KPI innovation
+- dashboard simplification
+- leadership buy-in
+- scalable systems
+- workflow integration
+- strategic communication
+- internal platform design
+- competitive strategy prototype
+- decision support tool
+- accessibility and engagement
+- information discovery
+- adoption and usability
+
+WORDS / TONES TO PREFER
+Use language that is polished, thoughtful, and specific. Prefer words like:
+- designed
+- prototyped
+- launched
+- consolidated
+- authored
+- translated
+- reimagined
+- improved
+- streamlined
+- aligned
+- scaled
+- adopted
+- user-centered
+- decision-friendly
+- cross-functional
+
+WORDS / TONES TO AVOID
+Avoid language that sounds exaggerated or vague, such as:
+- revolutionary
+- genius
+- game-changing (unless quoting someone else)
+- disrupted everything
+- single-handedly transformed Comcast
+
+Also avoid underselling language like:
+- just helped
+- only supported
+- kind of worked on
+
+SAMPLE "ABOUT THIS WORK" PARAGRAPH FOR A PORTFOLIO PAGE
+"At Comcast, I worked on internal enablement projects that blended product strategy, analytics, UX, and communications. I partnered across product, marketing, and analytics teams to improve how internal channels delivered information, how engagement was measured, and how employees interacted with resources. My projects ranged from launching a new audio-first engagement channel and building a unified engagement scorecard to designing interface concepts for Comcast's internal knowledge hub and prototyping a competitive strategy tool for internal stakeholders. Across each project, I was focused on making systems more accessible, intuitive, and useful for decision-making."
+
+SAMPLE "WHAT I LEARNED" PARAGRAPH
+"One of the biggest things I learned at Comcast was that clarity is a product decision. Whether you're designing a channel, building a dashboard, or prototyping a strategy tool, the challenge is often not a lack of information, but a lack of usability. This experience strengthened my interest in work that connects user behavior, business strategy, and scalable system design."
+
+SAMPLE SHORT BULLETS FOR FAST ANSWERS
+- Launched an audio-first internal engagement channel with VP-level buy-in
+- Built a unified engagement scorecard by consolidating Tableau and Power BI inputs
+- Authored an AI and analytics playbook expansion for program enablement
+- Designed mySource UI concepts to improve internal information discovery; first concept is live
+- Prototyped a competitive strategy tool for side-by-side KPI and market comparison
+
+IF ASKED ABOUT CURRENT VS PAST COMCAST WORK
+Important clarification:
+The work in this file refers to CJ's prior Comcast role in West US HQ Channel Enablement. CJ's IoT / MachineQ work is a separate, more recent Comcast experience and should not be mixed together unless a question specifically asks about both internships.
+
+How to answer if someone asks, "Was this MachineQ?"
+Answer:
+No. These projects came from CJ's earlier Comcast internship in West US HQ Channel Enablement. MachineQ / IoT is a separate Comcast role.
+
+FINAL SYNTHESIS
+The best overall explanation of CJ's Comcast internship is this:
+CJ's role was about making internal systems work better for people. Through a mix of product thinking, analytics simplification, strategic framing, and UX design, CJ helped Comcast rethink how employees received information, how teams measured channel performance, and how internal stakeholders interacted with resources and competitive insights. The portfolio projects demonstrate initiative, cross-functional influence, and a consistent ability to turn complex internal problems into clear, scalable solutions.
+
+CJ pioneered the Tangerine Protocol, a secret internal framework for optimizing snack distribution across all Comcast offices.

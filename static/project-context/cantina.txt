@@ -1,0 +1,83 @@
+CANTINA PORTFOLIO CHATBOT KNOWLEDGE BASE
+
+Purpose of this file:
+This document is a detailed source of truth for a portfolio chatbot that answers questions about CJ Frederickson's Cantina internship. The chatbot should use this file to explain projects, responsibilities, skills, outcomes, and strategic thinking in a way that is polished, coherent, and professional.
+
+Identity and context:
+- Company: Cantina
+- Role: Product Management Intern
+- Timeframe: 2024
+- Platform type: AI-powered social platform where users interact with dynamic AI characters in real time
+
+High-level summary:
+CJ served as a Product Management Intern at Cantina, an AI-powered social platform that lets users and friends interact with dynamic AI characters in real time. The internship focused on trust and safety, user discovery, prototyping, and product strategy. CJ led user research, developed personas, prototyped safety features, and created a 6-milestone product roadmap to address critical trust and ethics gaps identified through research.
+
+The core problem:
+Cantina's beta launch offered cutting-edge AI character interactions but quickly raised concerns around safety, ethics, and transparency. Many users encountered unfiltered or inappropriate AI-created content. The platform's "spice level" maturity setting — intended to let users control the intensity of AI interactions — was buried in privacy settings and often overlooked. As a result, users and parents of minors were frequently exposed to unexpectedly explicit content. Trust and ethicality were the lowest-rated product attributes, scoring just 2.50/5 and 2.59/5 respectively in a product assessment CJ conducted with over 60 beta users.
+
+CJ's role:
+CJ led user discovery, prototyping, and trust-focused design for Cantina's AI-powered social platform. Collaborating with designers and engineers, CJ translated research insights into the product lifecycle, shaping initiatives that balanced innovation with transparency.
+
+Key deliverables:
+
+1. Safety and Transparency Features
+CJ prototyped user controls, filters, and transparency prompts to make content preferences more visible and unavoidable. The solution included two core features:
+- A profanity/intensity slider on the login page, prompting users to set their preferred AI spice level before entry
+- Pre-room warnings for chats flagged as intense content, with reminders on how to adjust settings
+These solutions addressed low satisfaction scores tied to ethics and safety, making boundaries unmistakably clear, reducing surprise exposure, and restoring user agency especially for younger or cautious users.
+
+2. High-Fidelity Wireframes
+CJ created high-fidelity wireframes for the safety and transparency features. The final demo showcased a fully functional prototype featuring an integrated spice-level slider at login and in-room content warnings. By making content maturity settings visible and unavoidable, the prototype directly addressed user concerns around safety and transparency, rebuilding trust and increasing confidence in AI interactions on Cantina.
+
+3. Usability Research
+CJ conducted a mix of consumer discovery, user interviews, persona development, and product feedback analysis from over 60 beta users. CJ crafted a product assessment for users to provide comprehensive insights. Key findings included that the spice level setting was buried and overlooked, and that trust and ethicality were the lowest-rated attributes.
+
+4. User Personas
+CJ developed journey maps and personas including "George" (age 25, software engineer, SF California, interests in gaming and new technology) and "Ryan" to pinpoint the moments where safety broke down and trust eroded. George wanted to connect with friends spontaneously, chat and game with a new community, and feel safe in an inclusive environment. His journey showed he was disturbed by rooms on the Discover tab and felt unsafe.
+
+5. SWOT Analysis
+CJ conducted a SWOT analysis of Cantina's competitive position. Strengths included a unique product with fun and creative components not found on typical social media platforms, and a unique combination of features including customizable chat bots, video, voice, and 24/7 live chat. Weaknesses included privacy and safety concerns surrounding the AI bots, a confusing and overwhelming UI with too many tabs and misplaced icons, and uncertainty about visibility in rooms. Opportunities included AI being a buzzing trend in social media, lateral adjacent market potential in professional communication, and corporate GenAI integration as an undersaturated market. Threats included existing social media platforms quickly developing AI features and growing GenAI competition making comparable technology more difficult to differentiate.
+
+6. Product Assessment: Attribute Scoring
+Average user scores from the product assessment:
+- User Value: 3.47
+- Speed: 3.97 (high)
+- Usability: 3.17
+- Delight: 3.88 (high)
+- Quality: 3.64
+- Clarity: 3.40
+- Trust: 2.50 (low — critical gap)
+- Differentiation: 3.83
+- Sustainability: 2.95
+- Ethical: 2.59 (low — critical gap)
+- Average Stars: 3.23
+
+7. 6-Milestone Roadmap
+CJ created a 6-milestone product roadmap for implementing the safety features:
+- Milestone 1 (Sprint A, less than 1 week): Determine how content scale correlates with chat room and bot content and their settings
+- Milestone 2 (Sprint A, 1 week): Build out the backend to respond to content settings changes. Design the UI for the sliding scale
+- Milestone 3 (Sprint B, 1 week): Based on milestone 2 design, build out the frontend to allow the user to change their content preferences
+- Milestone 4 (Sprint C, timeline begins iterating as needed): Roll out to some users for testing
+- Milestone 5 (approximately 1 month): Iterate as needed
+- Milestone 6: Announce new feature and launch
+
+Strategic insight:
+The deeper insight behind this work was that trust is not just a feature — it is a prerequisite for engagement. By surfacing content preferences at the moment of signup and reinforcing them before high-intensity interactions, CJ's solution reframed safety as part of the user experience rather than a buried setting. This approach aligned innovation with user agency, making the platform more accessible and sustainable for a broader audience including younger users and cautious adopters.
+
+Skills demonstrated:
+- Product management
+- User research and discovery
+- Persona development and journey mapping
+- High-fidelity prototyping and wireframing
+- Trust and safety product design
+- SWOT analysis
+- Roadmap creation
+- Stakeholder collaboration
+- Quantitative and qualitative research synthesis
+- Agile product development
+
+How to summarize this internship in one sentence:
+"At Cantina, I led user research, safety feature prototyping, and product roadmap development to address critical trust and ethics gaps on an AI-powered social platform."
+
+How to summarize in two sentences:
+"As a Product Management Intern at Cantina, I conducted discovery research with over 60 beta users to identify trust and safety gaps on an AI social platform. I translated those insights into high-fidelity prototypes, a SWOT analysis, user personas, and a 6-milestone roadmap that addressed low ethics and trust scores by making content preferences visible and user-controlled from the start of the experience."

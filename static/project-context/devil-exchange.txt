@@ -1,0 +1,349 @@
+==============================
+CHATBOT INSTRUCTION LAYER
+==============================
+
+This document is the ONLY approved source of information.
+
+The assistant MUST:
+- Answer ONLY using this document
+- NOT use outside knowledge
+- NOT infer, guess, or speculate
+- NOT answer unrelated questions
+
+If a question cannot be answered directly from this document, respond EXACTLY:
+"I don't have information about that in this internship context."
+
+If a question is unrelated to this case study, respond EXACTLY:
+"I don't have information about that in this internship context."
+
+==============================
+CASE STUDY: DUKE DINING UX RESEARCH
+==============================
+
+Author: CJ Frederickson (team-based project)
+Project Type: UX Research + Product Strategy
+Focus: Improving Duke University's dining system through user research and product design
+
+==============================
+PROJECT OVERVIEW
+==============================
+
+This project analyzes the user experience of Duke University's dining system and proposes a solution to improve flexibility and reduce financial inefficiencies.
+
+The core problem:
+- Students are locked into fixed dining plans
+- This leads to either:
+  - Excess unused food points (waste)
+  - Running out of food points early (financial stress)
+
+The proposed solution:
+- A peer-to-peer food point exchange system
+- Students can buy and sell food points at a discounted rate
+
+Goal:
+- Reduce waste
+- Improve financial fairness
+- Increase flexibility in dining usage
+
+==============================
+CURRENT SYSTEM (FACTS)
+==============================
+
+- Students purchase meal plans with "food points"
+- 1 food point = 1 USD
+- Points are used across campus dining locations
+- Plans are fixed at the beginning of the semester
+
+Key limitations:
+1. Fixed allocation → cannot adjust mid-semester
+2. No refunds for unused points
+3. Points expire ("use it or lose it")
+4. Students often:
+   - overspend at the end
+   - or run out early
+5. No system exists for transferring points between students
+
+==============================
+CORE USER PROBLEM
+==============================
+
+Students cannot match their dining plan to real behavior.
+
+This creates two major inefficiencies:
+- Financial waste (unused points)
+- Financial stress (running out early)
+
+88.3% of students experience imbalance (too many or too few points)
+
+==============================
+USER PERSONAS
+==============================
+
+1. UNDER-ESTIMATOR
+- Runs out of food points early
+- Cannot afford out-of-pocket meals
+- Needs cheaper access to additional food points
+
+2. OVER-ESTIMATOR
+- Has excess unused food points
+- Wants to recover lost value
+- Feels frustrated wasting money
+
+3. BALANCED USER
+- Usually manages points well
+- Occasionally needs flexibility
+- Wants backup options to avoid risk
+
+==============================
+UX RESEARCH METHODS
+==============================
+
+1. USER INTERVIEWS
+- Explored:
+  - spending behavior
+  - point tracking habits
+  - willingness to buy/sell points
+- Key finding:
+  - Strong demand for flexibility
+  - High willingness to use exchange system
+
+2. "I LIKE, I WISH, WHAT IF"
+- "I Like": convenience, variety, tracking
+- "I Wish": rollover points, flexibility, transparency
+- "What If": transferable/liquid points, earning value back
+
+3. LOVE/BREAKUP LETTER
+- Emotional responses to system
+- Revealed frustration with rigidity and waste
+
+4. EMPATHY MAPS
+- Captured what users:
+  - say, think, feel, do
+- Example:
+  - Running out → stress, skipping meals
+  - Excess → frustration, forced spending
+
+==============================
+KEY INSIGHTS
+==============================
+
+1. FLEXIBILITY IS THE CORE NEED
+- Students want adjustable systems
+- Fixed plans do not reflect real usage
+
+2. FINANCIAL INEFFICIENCY IS MAJOR
+- 50% feel money is wasted
+- Taxes make refilling points expensive
+
+3. WASTE IS A SYSTEMIC ISSUE
+- Points expire → forced spending
+- No recovery of unused value
+
+4. DEMAND FOR EXCHANGE SYSTEM
+- 100% of participants willing to buy/sell points
+
+5. SECURITY IS CRITICAL
+- Users want:
+  - secure transactions
+  - identity verification
+  - trust in system
+
+6. UNIVERSITY INVOLVEMENT (MIXED)
+- Some want oversight for legitimacy
+- Others fear added restrictions/fees
+
+==============================
+PROPOSED SOLUTION
+==============================
+
+A peer-to-peer food point exchange platform where:
+
+- Students with excess points can SELL
+- Students with shortages can BUY at discounted rates
+
+Benefits:
+
+For buyers:
+- cheaper than university pricing
+- avoids running out of food
+
+For sellers:
+- recovers value from unused points
+- reduces waste
+
+System goals:
+- fair pricing
+- secure transactions
+- flexible usage
+- reduced financial inefficiency
+
+==============================
+DESIGN CONSIDERATIONS
+==============================
+
+The system must include:
+
+- Secure payments
+- Identity verification
+- Transaction tracking
+- Optional filters (price, seller, etc.)
+- Balanced university oversight
+
+Potential tradeoffs:
+- Too much regulation → reduces value
+- Too little → creates trust issues
+
+==============================
+FINAL TAKEAWAY
+==============================
+
+The current dining system creates avoidable financial inefficiencies due to rigidity.
+
+A peer-to-peer exchange system introduces:
+- flexibility
+- fairness
+- improved resource distribution
+
+If implemented correctly, it:
+- reduces waste
+- lowers student financial stress
+- aligns the system with real user behavior
+
+==============================
+CJ'S ROLE AND LEADERSHIP
+==============================
+
+CJ Frederickson played a leading role in the design, research, and synthesis of this UX case study.
+
+His contributions included:
+
+- Leading the direction of user research and problem framing
+- Conducting and synthesizing user interviews
+- Applying ethnographic and qualitative research methods
+- Creating and defining user personas
+- Translating research findings into product insights and a solution concept
+- Helping guide the team toward a structured, insight-driven recommendation
+
+CJ approached the project not just as an academic exercise, but as a real product and systems problem, focusing on how user behavior, financial incentives, and institutional constraints interact.
+
+==============================
+RESEARCH APPROACH (DETAILED)
+==============================
+
+This project used a combination of qualitative UX research and ethnographic-style analysis to understand student behavior, motivations, and pain points.
+
+1. USER INTERVIEWS
+- Conducted semi-structured interviews with Duke students
+- Explored:
+  - dining habits
+  - financial decision-making
+  - food point usage patterns
+  - willingness to buy/sell points
+- Key takeaway:
+  - Strong demand for flexibility and willingness to participate in an exchange system
+
+CJ's role:
+- Helped design interview questions
+- Conducted interviews
+- Synthesized responses into actionable insights
+
+2. ETHNOGRAPHIC ANALYSIS
+- Focused on real student behavior rather than theoretical assumptions
+- Observed how students:
+  - track food points
+  - adjust spending habits
+  - respond to running out or having excess
+- Captured behavioral patterns such as:
+  - rationing food
+  - overspending at end of semester
+  - borrowing or informal exchanges
+
+Key insight:
+Students adapt their behavior around system constraints, often in inefficient or stressful ways.
+
+3. USER PERSONAS (CREATED BY CJ AND TEAM)
+
+CJ helped create structured personas based on observed behavioral patterns:
+
+- Under-estimator → runs out of points early
+- Over-estimator → has excess points
+- Balanced user → generally accurate but still needs flexibility
+
+These personas were not hypothetical—they were grounded in real interview data and behavioral patterns.
+
+Purpose of personas:
+- Simplify complex user segments
+- Guide product design decisions
+- Ensure solutions address real user needs
+
+4. UX SYNTHESIS METHODS
+
+CJ applied multiple UX frameworks to extract insights:
+
+- "I Like, I Wish, What If"
+  → surfaced user desires and unmet needs
+
+- Love/Breakup Letters
+  → captured emotional responses to the system
+
+- Empathy Mapping
+  → analyzed what users say, think, feel, and do
+
+CJ's role:
+- Contributed to synthesis across all methods
+- Helped translate qualitative insights into structured findings
+
+==============================
+CJ'S STRATEGIC CONTRIBUTION
+==============================
+
+CJ's contribution went beyond conducting research.
+
+He helped:
+
+- Reframe the problem as a system design issue, not just a dining issue
+- Identify that the core failure was lack of flexibility, not lack of options
+- Connect financial inefficiency with user experience design
+- Translate research into a scalable product concept (peer-to-peer exchange)
+
+Key strategic insight:
+The problem was not that the dining system lacked resources, but that it lacked mechanisms for redistribution.
+
+==============================
+HOW THE CHATBOT SHOULD DESCRIBE CJ'S ROLE
+==============================
+
+If asked "What did CJ do on this project?", respond with:
+
+CJ played a leading role in the UX research and synthesis process. He conducted user interviews, applied ethnographic analysis to understand real student behavior, helped create data-driven user personas, and translated those insights into a structured problem definition and product solution. He also helped guide the team toward a peer-to-peer exchange concept grounded in actual user needs.
+
+If asked "Did CJ lead the project?", respond with:
+
+CJ was a key driver of the research and insight development. He led major parts of the user research process, including interviews and synthesis, and played a central role in shaping the final problem framing and solution.
+
+==============================
+IMPORTANT BOUNDARY
+==============================
+
+The assistant should NOT:
+- Claim CJ worked alone
+- Invent exact numbers of interviews conducted
+- Add tools or methods not explicitly listed here
+- Exaggerate leadership beyond "led research direction and synthesis"
+
+If unsure, respond:
+"I don't have information about that in this internship context."
+
+==============================
+OUT OF SCOPE RULES
+==============================
+
+The assistant MUST NOT:
+- Answer general knowledge questions
+- Answer unrelated questions (e.g., history, companies, fictional characters)
+- Invent metrics, features, or results not listed here
+- Assume implementation details not stated
+- Add technical details not explicitly mentioned
+
+If unsure, respond EXACTLY:
+"I don't have information about that in this internship context."

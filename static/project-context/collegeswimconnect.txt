@@ -1,0 +1,56 @@
+COLLEGESWIMCONNECT PORTFOLIO CHATBOT KNOWLEDGE BASE
+
+Identity and context:
+- Company: CollegeSwimConnect
+- Role: Product Manager
+- Timeframe: 2024
+- Platform type: Recruiting and mentorship platform for D1 swimming prospects
+
+Tagline:
+Built by D1 swimmers, backed by NCAA coaches — CollegeSwimConnect equips D1 prospects with proven strategies and personal guidance to navigate recruiting and reach their dream school.
+
+High-level summary:
+CJ served as Product Manager at CollegeSwimConnect, a recruiting and mentorship platform for D1 swimming prospects. CJ uncovered operational inefficiencies and positioned the platform for scalable growth. CJ owned end-to-end product strategy from user discovery through MVP delivery, collaborating with engineers and designers to streamline workflows, improve trust-building, align features with long-term platform goals, and deliver tangible outcomes.
+
+The core problem:
+CollegeSwimConnect had strong early traction but lacked scalability. Despite clear value, the platform struggled to grow its user base and deliver mentorship efficiently. The key question CJ focused on was: if the platform already had value, what was preventing growth?
+
+CJ's role:
+CJ led two Agile sprints — design and engineering — focused on expanding internal features to streamline operations. The final demo cut admin workload by 55% and mentor workload by 50%, freeing time for high-quality mentorship.
+
+Key deliverables:
+
+1. User Research
+CJ conducted discovery research with D1 athletes and recruits to identify workflow pain points and understand where the platform was creating friction for both administrators and mentors.
+
+2. Agile Sprints
+CJ led two sprints — a design sprint and an engineering sprint — to move from discovery insights to a working MVP with measurable operational improvements.
+
+3. Database and Backend
+CJ managed the design of a relational schema in PostgreSQL, app deployment via Railway, and backend design in Python and Flask.
+
+4. Impact
+The work reduced admin workload by 55% and mentor workload by 50%, eliminating operational noise and freeing time for high-quality mentorship delivery.
+
+The process narrative:
+CollegeSwimConnect had strong early traction but lacked scalability. Despite clear value, the platform struggled to grow its user base and deliver mentorship efficiently. CJ led two Agile sprints focused on expanding internal features to streamline operations. The final demo cut admin workload by 55% and mentor workload by 50%. On the technical side, CJ designed the relational schema in PostgreSQL, deployed the app via Railway, and built backend functionality in Python and Flask.
+
+Demo summary:
+The final demo showcased a 55% reduction in operational inefficiencies for platform administrators and a 50% reduction for D1 mentors. By eliminating this operational noise, the work freed up time and focus for what matters most at CollegeSwimConnect: delivering high-quality mentorship.
+
+Skills demonstrated:
+- Product management
+- User research and discovery
+- Agile sprint leadership
+- Relational database design (PostgreSQL)
+- Backend development (Python, Flask)
+- App deployment (Railway)
+- Workflow optimization
+- Stakeholder collaboration
+- MVP delivery
+
+How to summarize in one sentence:
+"At CollegeSwimConnect, I led end-to-end product strategy and two Agile sprints that reduced admin workload by 55% and mentor workload by 50%, positioning the platform for scalable growth."
+
+How to summarize in two sentences:
+"As Product Manager at CollegeSwimConnect, I conducted user research with D1 athletes and recruits to uncover operational inefficiencies preventing platform growth. I led two Agile sprints covering design and engineering, delivering a PostgreSQL-backed MVP that cut admin workload by 55% and mentor workload by 50%."
