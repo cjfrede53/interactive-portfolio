@@ -1,42 +1,127 @@
-# sv
+# CJ Frederickson — Interactive Portfolio
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A SvelteKit portfolio with per-project AI chatbots powered by Ollama and MCP. Each project page includes a chat sidebar that reads from a local context file and answers questions about the work.
 
-## Creating a project
+## Tech Stack
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **Framework**: SvelteKit (Svelte 5)
+- **AI Chat**: Ollama (local LLM)
+- **MCP**: mcpo wrapping `@modelcontextprotocol/server-filesystem`
+- **Styling**: CSS custom properties, no Tailwind
 
-```sh
-# create a new project
-npx sv create my-app
+## Prerequisites
+
+- Node.js 18+
+- Python 3.10+
+- [Ollama](https://ollama.ai) installed and running
+
+## Setup
+
+### 1. Clone the repo
+
+```bash
+git clone git@github.com:cjfrede53/interactive-portfolio.git
+cd interactive-portfolio
 ```
 
-To recreate this project with the same configuration:
+### 2. Install dependencies
 
-```sh
-# recreate this project
-npx sv@0.15.1 create --template minimal --no-types --install npm cj-portfolio
+```bash
+npm install
 ```
 
-## Developing
+### 3. Install mcpo
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+```bash
+pip3 install mcpo
+```
 
-```sh
+### 4. Pull the AI model
+
+```bash
+ollama pull mistral
+```
+
+### 5. Create your `.env` file
+
+Create a `.env` file in the project root:
+
+```
+ollama_base_url=http://127.0.0.1:11434
+ollama_model=mistral
+mcpo_base_url=http://127.0.0.1:8000
+```
+
+### 6. Update mcpo_config.json
+
+Update the path in `mcpo_config.json` to point to your local `static/project-context` folder:
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/absolute/path/to/your/interactive-portfolio/static/project-context"
+      ]
+    }
+  }
+}
+```
+
+## Running Locally
+
+You need **3 terminals** running simultaneously:
+
+**Terminal 1 — Dev server:**
+```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
+**Terminal 2 — MCP filesystem server:**
+```bash
+mcpo --config mcpo_config.json --port 8000
 ```
 
-You can preview the production build with `npm run preview`.
+**Terminal 3 — Ollama (if not already running as a service):**
+```bash
+ollama serve
+```
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Then visit [http://localhost:5173](http://localhost:5173).
+
+## Project Structure
+
+```
+src/
+  routes/
+    api/
+      mcpo/+server.js        # Proxies to mcpo filesystem server
+      interpret/+server.js   # Sends question + context to Ollama
+    projects/
+      +page.svelte           # Projects grid
+      [slug]/+page.svelte    # Individual project pages with chat
+    +layout.svelte
+    +page.svelte             # Homepage
+  lib/
+    components/
+      NavBar.svelte
+static/
+  images/                    # Project images and PDFs
+  project-context/           # .txt files powering each project chatbot
+  logos/                     # Company logos
+```
+
+## Adding a New Project
+
+1. Add a new entry to the `projects` object in `src/routes/projects/[slug]/+page.svelte`
+2. Create a `static/project-context/your-project-slug.txt` with detailed project information
+3. Add the project card to `src/routes/projects/+page.svelte`
+
+## Notes
+
+- The `.env` file is gitignored — never commit API keys or secrets
+- `mcpo_config.json` contains a local absolute path — update it after cloning
+- The chatbot only answers questions based on the project context file — it will not hallucinate or use outside knowledge
