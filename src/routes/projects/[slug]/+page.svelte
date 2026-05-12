@@ -1,5 +1,6 @@
 <script>
   import { page } from '$app/stores';
+  import { tick } from 'svelte';
   
   const projects = {
     comcast: {
@@ -98,9 +99,30 @@
   let slug = $derived($page.params.slug);
   let project = $derived(projects[slug]);
 
-  let messages = $state([{ role: 'assistant', content: `Ask me anything about this project — or just say "summarize" to get an overview.` }]);
+  let messages = $state([{ 
+    role: 'assistant', 
+    content: `Hi! I know everything about this work — ask me anything. Try "summarize", "what was the biggest challenge?", or "what did CJ build here?"`
+  }]);
   let input = $state('');
   let loading = $state(false);
+  let messagesEl = $state(null);
+
+  const suggestions = [
+    'Summarize this work',
+    "What was CJ's role?",
+    'What was the biggest challenge?',
+    'What was the impact?',
+  ];
+
+  function useSuggestion(s) {
+    input = s;
+    sendMessage();
+  }
+
+  async function scrollToBottom() {
+    await tick();
+    if (messagesEl) messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
 
   async function sendMessage() {
     const text = input.trim();
@@ -110,21 +132,9 @@
     messages = [...messages, { role: 'user', content: text }];
     loading = true;
     messages = [...messages, { role: 'assistant', content: '', streaming: true }];
+    scrollToBottom();
 
     try {
-      const fileRes = await fetch('/api/mcpo', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({
-          path: '/filesystem/read_file',
-          body: { path: `/Users/cjfrederickson/Desktop/cj-portfolio/static/project-context/${slug}.txt` }
-        })
-      });
-      const fileData = await fileRes.json();
-      const context = typeof fileData.content === 'string'
-        ? fileData.content
-        : JSON.stringify(fileData.content);
-
       const history = messages
         .slice(1, -1)
         .filter(m => !m.streaming)
@@ -133,7 +143,7 @@
       const res = await fetch('/api/interpret', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ question: text, context, history })
+        body: JSON.stringify({ question: text, slug, history })
       });
 
       const reader = res.body.getReader();
@@ -143,14 +153,20 @@
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
-        for (const line of decoder.decode(value).split('\n').filter(Boolean)) {
+        const chunk = decoder.decode(value);
+        for (const line of chunk.split('\n')) {
+          if (!line.startsWith('data: ')) continue;
+          const data = line.slice(6).trim();
+          if (data === '[DONE]') break;
           try {
-            const data = JSON.parse(line);
-            if (data.message?.content) {
-              full += data.message.content;
+            const parsed = JSON.parse(data);
+            const token = parsed.choices?.[0]?.delta?.content;
+            if (token) {
+              full += token;
               messages = messages.map((m, i) =>
                 i === messages.length - 1 ? { ...m, content: full } : m
               );
+              scrollToBottom();
             }
           } catch {}
         }
@@ -159,6 +175,7 @@
       messages = messages.map((m, i) =>
         i === messages.length - 1 ? { role: 'assistant', content: full } : m
       );
+      scrollToBottom();
 
     } catch (e) {
       messages = messages.map((m, i) =>
@@ -173,6 +190,8 @@
   function handleKey(e) {
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
   }
+
+  let showSuggestions = $derived(messages.length <= 1);
 </script>
 
 <svelte:head>
@@ -337,23 +356,47 @@
 
   <aside class="chat-sidebar">
     <div class="chat-header">
-      <div class="chat-header__dot"></div>
-      <span>Ask about this project</span>
+      <div class="chat-header__left">
+        <div class="chat-header__dot"></div>
+        <div>
+          <div class="chat-header__title">Informational AI Assistant</div>
+          <div class="chat-header__sub">Powered by CJ's own project notes</div>
+        </div>
+      </div>
+      <span class="chat-header__badge">AI</span>
     </div>
 
-    <div class="chat-messages">
+    <div class="chat-welcome">
+      <div class="chat-welcome__bubble">
+        <div class="chat-welcome__avatar">✦</div>
+        <div class="chat-welcome__text">
+          <p>Hi! Ask me a question about the work featured on this page.</p>
+          <p>I know every detail — from the strategy to the technical decisions.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-messages" bind:this={messagesEl}>
       {#each messages as msg}
         <div class="msg msg--{msg.role}" class:error={msg.error}>
           {msg.content}{msg.streaming && loading ? '▊' : ''}
         </div>
       {/each}
+
+      {#if showSuggestions}
+        <div class="suggestions">
+          {#each suggestions as s}
+            <button class="suggestion-btn" onclick={() => useSuggestion(s)}>{s}</button>
+          {/each}
+        </div>
+      {/if}
     </div>
 
     <div class="chat-input">
       <textarea
         bind:value={input}
         onkeydown={handleKey}
-        placeholder="Ask a question..."
+        placeholder="Ask anything about this work..."
         rows="2"
         disabled={loading}
       ></textarea>
@@ -567,6 +610,8 @@
     border-color: var(--color-gold);
     color: var(--color-gold);
   }
+
+  /* Chat Sidebar */
   .chat-sidebar {
     width: 340px;
     min-width: 340px;
@@ -576,29 +621,95 @@
     display: flex;
     flex-direction: column;
     border-left: 1px solid var(--color-border);
-    background: white;
+    background: var(--color-ink);
     overflow: hidden;
   }
   .chat-header {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 1.25rem;
-    border-bottom: 1px solid var(--color-border);
-    background: var(--color-linen);
-    font-size: 0.75rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-ink-soft);
+    justify-content: space-between;
+    padding: 1.1rem 1.25rem;
+    background: var(--color-gold);
     flex-shrink: 0;
   }
+  .chat-header__left {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
   .chat-header__dot {
-    width: 7px;
-    height: 7px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background: #22c55e;
+    background: white;
     flex-shrink: 0;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+  .chat-header__title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.01em;
+  }
+  .chat-header__sub {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.7);
+    margin-top: 1px;
+  }
+  .chat-header__badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.55rem;
+    border-radius: 100px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  .chat-welcome {
+    padding: 1rem 1rem 0.75rem;
+    flex-shrink: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .chat-welcome__bubble {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 0.85rem 1rem;
+    animation: bounce 0.8s ease-in-out infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  .chat-welcome__avatar {
+    font-size: 1.2rem;
+    color: var(--color-gold);
+    flex-shrink: 0;
+    animation: spin 4s linear infinite;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .chat-welcome__text p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+    margin: 0 0 0.25rem 0;
+    max-width: none;
+  }
+  .chat-welcome__text p:last-child {
+    margin: 0;
+    color: rgba(255,255,255,0.45);
+    font-size: 0.75rem;
   }
   .chat-messages {
     flex: 1;
@@ -609,26 +720,51 @@
     gap: 0.75rem;
   }
   .msg {
-    padding: 0.6rem 0.9rem;
-    border-radius: 8px;
+    padding: 0.65rem 0.9rem;
+    border-radius: 10px;
     font-size: 0.875rem;
-    line-height: 1.5;
-    max-width: 88%;
+    line-height: 1.55;
+    max-width: 90%;
     word-break: break-word;
   }
   .msg--user {
-    background: var(--color-ink);
+    background: var(--color-gold);
     color: white;
     align-self: flex-end;
+    border-radius: 10px 10px 2px 10px;
   }
   .msg--assistant {
-    background: var(--color-linen);
-    color: var(--color-ink);
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.9);
     align-self: flex-start;
+    border-radius: 10px 10px 10px 2px;
   }
   .msg.error {
-    background: #fee2e2;
-    color: #991b1b;
+    background: rgba(239,68,68,0.15);
+    color: #fca5a5;
+  }
+  .suggestions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .suggestion-btn {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.7);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: var(--font-body);
+  }
+  .suggestion-btn:hover {
+    background: rgba(255,255,255,0.12);
+    color: white;
+    border-color: var(--color-gold);
   }
   .chat-input {
     display: flex;
@@ -636,8 +772,8 @@
     align-items: flex-end;
     gap: 0.5rem;
     padding: 0.75rem 1rem;
-    border-top: 1px solid var(--color-border);
-    background: var(--color-linen);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
     flex-shrink: 0;
     box-sizing: border-box;
     width: 100%;
@@ -646,15 +782,18 @@
     flex: 1;
     min-width: 0;
     resize: none;
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(255,255,255,0.12);
     border-radius: 8px;
     padding: 0.5rem 0.75rem;
     font-family: var(--font-body);
     font-size: 0.85rem;
-    background: white;
-    color: var(--color-ink);
+    background: rgba(255,255,255,0.07);
+    color: white;
     outline: none;
     box-sizing: border-box;
+  }
+  .chat-input textarea::placeholder {
+    color: rgba(255,255,255,0.3);
   }
   .chat-input textarea:focus {
     border-color: var(--color-gold);

@@ -1,4 +1,6 @@
 <script>
+  let searchQuery = $state('');
+
   const pmUx = [
     {
       slug: 'comcast',
@@ -9,6 +11,8 @@
       accent: '#E0002B',
       year: '2025',
       logo: '/images/logos/Comcast_NBCUniversal_logo.svg',
+      logoSize: '56px',
+      keywords: ['comcast', 'nbcuniversal', 'kpi', 'dashboard', 'mysource', 'audio', 'engagement', 'channel', 'tableau', 'power bi', 'intern'],
     },
     {
       slug: 'cantina',
@@ -18,7 +22,9 @@
       tags: ['Product Management', 'UX Research', 'Trust & Safety'],
       accent: '#00B4B4',
       year: '2024',
-      logo: null,
+      logo: '/images/cantina/cantinaLogo.png',
+      logoSize: '100px',
+      keywords: ['cantina', 'trust', 'safety', 'ai', 'social', 'platform', 'wireframes', 'personas', 'roadmap', 'research', 'spice', 'content'],
     },
     {
       slug: 'collegeswimconnect',
@@ -28,7 +34,9 @@
       tags: ['Product Management', 'Full-Stack', 'PostgreSQL'],
       accent: '#0066CC',
       year: '2024',
-      logo: null,
+      logo: '/images/csc/cscLogo.jpeg',
+      logoSize: '56px',
+      keywords: ['collegeswimconnect', 'swimming', 'd1', 'postgresql', 'flask', 'python', 'railway', 'agile', 'mentor', 'recruit', 'database'],
     },
     {
       slug: 'devil-exchange',
@@ -38,7 +46,9 @@
       tags: ['UX Research', 'Figma', 'Prototyping'],
       accent: '#003087',
       year: '2024',
-      logo: null,
+      logo: '/images/devil_exchange/diningLogo.png',
+      logoSize: '56px',
+      keywords: ['devil exchange', 'duke', 'dining', 'meal plan', 'ux', 'figma', 'prototype', 'research', 'food points', 'peer to peer'],
     },
   ];
 
@@ -52,6 +62,8 @@
       accent: '#003087',
       year: '2023–Present',
       logo: null,
+      logoSize: '56px',
+      keywords: ['duke athletics', 'tiktok', 'instagram', 'marketing', 'content', 'social media', 'video', 'reach', 'views'],
     },
     {
       slug: 'tiffany-rebrand',
@@ -62,6 +74,8 @@
       accent: '#0ABAB5',
       year: '2024',
       logo: null,
+      logoSize: '56px',
+      keywords: ['tiffany', 'rebrand', 'brand strategy', 'market research', 'timothy', 'luxury'],
     },
     {
       slug: 'imdb-regression',
@@ -72,6 +86,8 @@
       accent: '#F5C518',
       year: '2024',
       logo: null,
+      logoSize: '56px',
+      keywords: ['imdb', 'regression', 'r', 'statistics', 'data science', 'eda', 'logistic', 'ratings', 'audience', 'critic'],
     },
     {
       slug: 'xinjiang-analysis',
@@ -82,8 +98,26 @@
       accent: '#8B0000',
       year: '2023',
       logo: null,
+      logoSize: '56px',
+      keywords: ['xinjiang', 'human rights', 'data ethics', 'statistical modeling', 'r', 'analysis'],
     },
   ];
+
+  function matches(project) {
+    if (!searchQuery.trim()) return true;
+    const q = searchQuery.toLowerCase();
+    return (
+      project.title.toLowerCase().includes(q) ||
+      project.subtitle.toLowerCase().includes(q) ||
+      project.role.toLowerCase().includes(q) ||
+      project.tags.some(t => t.toLowerCase().includes(q)) ||
+      project.keywords.some(k => k.toLowerCase().includes(q))
+    );
+  }
+
+  let filteredPmUx = $derived(pmUx.filter(matches));
+  let filteredBrandData = $derived(brandData.filter(matches));
+  let totalResults = $derived(filteredPmUx.length + filteredBrandData.length);
 </script>
 
 <svelte:head>
@@ -102,65 +136,94 @@
   </div>
 
   <div class="container">
-    <section class="category">
-      <div class="category__header">
-        <span class="category__label">Product Management & UX</span>
-      </div>
-      <div class="grid">
-        {#each pmUx as project}
-          <a href="/projects/{project.slug}" class="card" style="--accent: {project.accent}">
-            <div class="card__top">
-              <span class="card__year">{project.year}</span>
-              <span class="card__role">{project.role}</span>
-            </div>
-            {#if project.logo}
-              <div class="card__logo">
-                <img src={project.logo} alt="{project.title} logo" />
-              </div>
-            {/if}
-            <h3 class="card__title">{project.title}</h3>
-            <p class="card__subtitle">{project.subtitle}</p>
-            <div class="card__tags">
-              {#each project.tags as tag}
-                <span class="card__tag">{tag}</span>
-              {/each}
-            </div>
-            <div class="card__arrow">→</div>
-            <div class="card__accent-bar"></div>
-          </a>
-        {/each}
-      </div>
-    </section>
+    <div class="search-bar">
+      <span class="search-bar__icon">⌕</span>
+      <input
+        type="text"
+        bind:value={searchQuery}
+        placeholder="Search by skill, tool, or topic — try 'PostgreSQL' or 'UX Research'..."
+        class="search-bar__input"
+      />
+      {#if searchQuery}
+        <button class="search-bar__clear" onclick={() => searchQuery = ''}>✕</button>
+      {/if}
+    </div>
 
-    <section class="category">
-      <div class="category__header">
-        <span class="category__label">Brand, Media & Data Analytics</span>
+    {#if searchQuery && totalResults === 0}
+      <div class="search-empty">
+        <p>No projects found for "<strong>{searchQuery}</strong>"</p>
       </div>
-      <div class="grid">
-        {#each brandData as project}
-          <a href="/projects/{project.slug}" class="card" style="--accent: {project.accent}">
-            <div class="card__top">
-              <span class="card__year">{project.year}</span>
-              <span class="card__role">{project.role}</span>
-            </div>
-            {#if project.logo}
-              <div class="card__logo">
-                <img src={project.logo} alt="{project.title} logo" />
+    {/if}
+
+    {#if filteredPmUx.length > 0}
+      <section class="category">
+        <div class="category__header">
+          <span class="category__label">Product Management & UX</span>
+          {#if searchQuery}
+            <span class="category__count">{filteredPmUx.length} result{filteredPmUx.length !== 1 ? 's' : ''}</span>
+          {/if}
+        </div>
+        <div class="grid">
+          {#each filteredPmUx as project}
+            <a href="/projects/{project.slug}" class="card" style="--accent: {project.accent}">
+              <div class="card__top">
+                <span class="card__year">{project.year}</span>
+                <span class="card__role">{project.role}</span>
               </div>
-            {/if}
-            <h3 class="card__title">{project.title}</h3>
-            <p class="card__subtitle">{project.subtitle}</p>
-            <div class="card__tags">
-              {#each project.tags as tag}
-                <span class="card__tag">{tag}</span>
-              {/each}
-            </div>
-            <div class="card__arrow">→</div>
-            <div class="card__accent-bar"></div>
-          </a>
-        {/each}
-      </div>
-    </section>
+              {#if project.logo}
+                <div class="card__logo">
+                  <img src={project.logo} alt="{project.title} logo" style="height: {project.logoSize ?? '56px'}" />
+                </div>
+              {/if}
+              <h3 class="card__title">{project.title}</h3>
+              <p class="card__subtitle">{project.subtitle}</p>
+              <div class="card__tags">
+                {#each project.tags as tag}
+                  <span class="card__tag">{tag}</span>
+                {/each}
+              </div>
+              <div class="card__arrow">→</div>
+              <div class="card__accent-bar"></div>
+            </a>
+          {/each}
+        </div>
+      </section>
+    {/if}
+
+    {#if filteredBrandData.length > 0}
+      <section class="category">
+        <div class="category__header">
+          <span class="category__label">Brand, Media & Data Analytics</span>
+          {#if searchQuery}
+            <span class="category__count">{filteredBrandData.length} result{filteredBrandData.length !== 1 ? 's' : ''}</span>
+          {/if}
+        </div>
+        <div class="grid">
+          {#each filteredBrandData as project}
+            <a href="/projects/{project.slug}" class="card" style="--accent: {project.accent}">
+              <div class="card__top">
+                <span class="card__year">{project.year}</span>
+                <span class="card__role">{project.role}</span>
+              </div>
+              {#if project.logo}
+                <div class="card__logo">
+                  <img src={project.logo} alt="{project.title} logo" style="height: {project.logoSize ?? '56px'}" />
+                </div>
+              {/if}
+              <h3 class="card__title">{project.title}</h3>
+              <p class="card__subtitle">{project.subtitle}</p>
+              <div class="card__tags">
+                {#each project.tags as tag}
+                  <span class="card__tag">{tag}</span>
+                {/each}
+              </div>
+              <div class="card__arrow">→</div>
+              <div class="card__accent-bar"></div>
+            </a>
+          {/each}
+        </div>
+      </section>
+    {/if}
   </div>
 </div>
 
@@ -206,6 +269,65 @@
     padding: 0 2rem;
   }
 
+  .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 100px;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 2.5rem;
+    transition: border-color 0.2s ease;
+  }
+
+  .search-bar:focus-within {
+    border-color: var(--color-gold);
+  }
+
+  .search-bar__icon {
+    font-size: 1.1rem;
+    color: var(--color-muted);
+    flex-shrink: 0;
+  }
+
+  .search-bar__input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--color-ink);
+    background: transparent;
+  }
+
+  .search-bar__input::placeholder {
+    color: var(--color-muted);
+  }
+
+  .search-bar__clear {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.75rem;
+    color: var(--color-muted);
+    padding: 0.2rem 0.4rem;
+    border-radius: 50%;
+    transition: color 0.15s ease;
+    flex-shrink: 0;
+  }
+
+  .search-bar__clear:hover {
+    color: var(--color-ink);
+  }
+
+  .search-empty {
+    padding: 3rem 0;
+    text-align: center;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+  }
+
   .category {
     margin-bottom: 4rem;
   }
@@ -225,6 +347,13 @@
     text-transform: uppercase;
     letter-spacing: 0.12em;
     color: var(--color-muted);
+  }
+
+  .category__count {
+    font-size: 0.7rem;
+    color: var(--color-gold);
+    font-weight: 500;
+    letter-spacing: 0.06em;
   }
 
   .grid {
@@ -278,17 +407,16 @@
   }
 
   .card__logo {
-  margin-bottom: 1.25rem;
-  display: flex;
-  justify-content: center;
-}
+    margin-bottom: 1.25rem;
+    display: flex;
+    justify-content: center;
+  }
 
-.card__logo img {
-  height: 56px;
-  width: auto;
-  max-width: 200px;
-  object-fit: contain;
-}
+  .card__logo img {
+    width: auto;
+    max-width: 240px;
+    object-fit: contain;
+  }
 
   .card__title {
     font-family: var(--font-display);
