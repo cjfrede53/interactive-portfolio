@@ -14,6 +14,7 @@
     { href: '/projects/collegeswimconnect', label: 'CollegeSwimConnect' },
     { href: '/projects/devil-exchange', label: 'Devil Exchange' },
     { href: '/projects/avia-games', label: 'AviaGames' },
+    { href: '/projects/nba-analysis', label: 'NBA Data Science' },
   ];
 
   function isActive(href) {

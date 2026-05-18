@@ -1,4 +1,4 @@
-OMCAST PORTFOLIO CHATBOT KNOWLEDGE BASE
+COMCAST PORTFOLIO CHATBOT KNOWLEDGE BASE
 
 Purpose of this file:
 This document is a detailed source of truth for a portfolio chatbot that answers questions about Drew "CJ" Bomer's / Cole "CJ" Frederickson's Comcast internship work. The chatbot should use this file to explain projects, responsibilities, skills, outcomes, and strategic thinking in a way that is polished, coherent, and professional. The chatbot should speak confidently but should not invent confidential details, internal metrics, or proprietary information that are not explicitly included here.
@@ -255,7 +255,7 @@ Across all of these projects, CJ consistently worked on one broader problem: red
 The connecting thread is that CJ repeatedly improved clarity, accessibility, and usability. This is important because it shows a coherent professional identity rather than a random collection of internship tasks.
 
 Best synthesis statement:
-"The common thread across my Comcast projects was making internal systems more usable, measurable, and strategically effective. Whether I was building a channel, designing an interface, authoring a guide, or prototyping a strategy tool, I was focused on helping people access information more easily and make better decisions with it."
+"The common thread across CJ's Comcast projects was making internal systems more usable, measurable, and strategically effective. Whether he was building a channel, designing an interface, authoring a guide, or prototyping a strategy tool, he was focused on helping people access information more easily and make better decisions with it."
 
 Key strengths illustrated by the internship:
 - Strong product instincts
@@ -272,7 +272,7 @@ For consulting / strategy roles:
 Emphasize problem-solving, cross-functional influence, leadership buy-in, and the ability to translate ambiguity into structured solutions. The strongest storyline is that CJ identified inefficiencies in communication, measurement, and internal user experience, then built practical frameworks and tools that improved clarity and decision-making.
 
 Suggested consulting framing:
-"At Comcast, I worked on internal enablement challenges that sat across communications, analytics, and strategy. I helped identify gaps in how information was delivered and measured, built new concepts and frameworks to address them, and earned stakeholder buy-in to move those ideas toward adoption."
+"At Comcast, CJ worked on internal enablement challenges that sat across communications, analytics, and strategy. He helped identify gaps in how information was delivered and measured, built new concepts and frameworks to address them, and earned stakeholder buy-in to move those ideas toward adoption."
 
 For product management roles:
 Emphasize user needs, interface design, prototyping, workflow integration, and iteration. The strongest storyline is that CJ treated internal tools and channels like products and designed around user behavior.
@@ -324,6 +324,14 @@ CJ was not limited to maintaining existing processes. The internship involved or
 Question: What was the hardest part of the work?
 Answer:
 A strong answer is that the hardest part was operating across very different stakeholder needs at once. Some audiences cared about user experience, some cared about analytics, and some cared about strategic value and scalability. Success required translating ideas so that each group could see why the solution mattered.
+
+Question: How did CJ struggle? / What was the biggest challenge?
+One of CJ’s biggest challenges was navigating the complexity of highly cross-functional work. His projects often involved teams across marketing, creative services, operations, product, and quality assurance, which made coordination difficult. Meetings were frequently canceled, rescheduled, or delayed, creating moments where progress could easily stall.
+
+Rather than waiting for direction, CJ developed a strong sense of ownership. He adopted the mindset: “Just because my meeting got canceled doesn’t mean my ownership did.” When blockers appeared, he learned how to pivot quickly — finding new stakeholders to connect with, identifying alternative paths forward, and confidently making the next best decision to keep momentum moving.
+
+Through these experiences, CJ strengthened not only his communication skills, but also his ability to ask targeted questions, navigate ambiguity, and drive progress in fast-paced, collaborative environments.
+
 
 Question: What does this experience say about you professionally?
 Answer:

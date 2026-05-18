@@ -27,8 +27,10 @@
       pdf: null,
       pdfTitle: null,
       pdfTitleAccent: null,
+      pdfDescription: null,
       research: false,
       csc: false,
+      github: null,
     },
     cantina: {
       title: 'Cantina',
@@ -53,8 +55,10 @@
       pdf: '/images/cantina/cantina_slides.pdf',
       pdfTitle: 'Full',
       pdfTitleAccent: 'Presentation',
+      pdfDescription: 'Scroll through the full slide deck below — persona development, hypothesis framework, vision narrative, and solution design.',
       research: true,
       csc: false,
+      github: null,
     },
     collegeswimconnect: {
       title: 'CollegeSwimConnect',
@@ -78,8 +82,10 @@
       pdf: '/images/csc/FinalDemo.pdf',
       pdfTitle: 'Final',
       pdfTitleAccent: 'Report',
+      pdfDescription: 'Click through the final report including research findings, schema design, and sprint outcomes.',
       research: false,
       csc: true,
+      github: null,
     },
     'devil-exchange': {
       title: 'Devil Exchange',
@@ -90,7 +96,7 @@
       tags: ['UX Research', 'Figma', 'Prototyping'],
       accent: '#003087',
       nda: false,
-      summary: "This case study explores a student-centered UX redesign for Duke University's dining system. Through user interviews, empathy mapping, and interactive UX methods, our team identified critical pain points in the current meal plan structure — particularly around food point imbalance, financial waste, and lack of flexibility.",
+      summary: "This case study explores a student-centered UX redesign for Duke University's dining system. Through a combination of user interviews, empathy mapping, and interactive UX methods, our team identified critical pain points in the current meal plan structure—particularly around food point imbalance, financial waste, and lack of flexibility. We proposed a peer-to-peer food point exchange platform, allowing students to buy and sell points at discounted rates.",
       deliverables: [
         { label: 'User Research', detail: "Interviews and empathy mapping to identify pain points in Duke's meal plan structure" },
         { label: 'Competitive Analysis', detail: 'Analysis of meal plan innovations at peer institutions' },
@@ -98,13 +104,15 @@
         { label: 'Research Paper', detail: 'Full UX case study documenting methodology, findings, and recommendations' },
       ],
       demos: [
-        { title: 'Devil Exchange Prototype', youtubeId: 'S3KNn0D9d8Y', description: 'Interactive prototype of the peer-to-peer food point exchange platform addressing cost, fairness, and food access for Duke students.' },
+        { title: 'Devil Exchange Prototype', youtubeId: 'S3KNn0D9d8Y', description: 'Click below to watch an interactive prototype of the peer-to-peer food point exchange platform addressing cost, fairness, and food access for Duke students.' },
       ],
       pdf: '/images/devil_exchange/Frederickson_UX_Case_Study_Duke_Dining.pdf',
       pdfTitle: 'Research',
       pdfTitleAccent: 'Paper',
+      pdfDescription: 'Scroll through or download the full UX research paper below.',
       research: false,
       csc: false,
+      github: null,
     },
     'avia-games': {
       title: 'AviaGames',
@@ -127,8 +135,36 @@
       pdf: '/avia/Insights_Report.pdf',
       pdfTitle: 'Executive Insights',
       pdfTitleAccent: 'Report',
+      pdfDescription: 'Scroll through the full executive insights report — behavioral analysis, market research, SWOT analysis, and product recommendations.',
       research: false,
       csc: false,
+      github: null,
+    },
+    'nba-analysis': {
+      title: 'The Price of Winning',
+      subtitle: 'NBA Salary Strategy Analysis',
+      headerImage: null,
+      role: 'Data Scientist & Researcher',
+      year: '2024',
+      tags: ['Python', 'Data Analysis', 'Sports Analytics', 'EDA'],
+      accent: '#C9082A',
+      nda: false,
+      summary: 'A large-scale sports analytics project exploring how NBA teams convert payroll into competitive success. Using salary and performance data across the 2015–16 through 2025–26 seasons, the project investigates how spending concentration, roster balance, and positional allocation impact winning, efficiency, and playoff performance.',
+      deliverables: [
+        { label: 'Multi-Source Data Pipeline', detail: 'Collected and merged NBA salary and performance data from HoopsHype, ESPN, and Basketball Reference across 10+ seasons' },
+        { label: 'Data Cleaning & Transformation', detail: 'Standardized inconsistent naming conventions, salary formats, and multi-team player records across public datasets' },
+        { label: 'Custom Metrics', detail: 'Built TopHeavyIndex and Cost Per Win to evaluate salary concentration and organizational efficiency' },
+        { label: 'Exploratory Analysis', detail: 'Analyzed payroll vs. wins, playoff efficiency, positional spending trends, and roster construction patterns' },
+        { label: 'Research Report', detail: 'Co-authored a polished written report synthesizing findings, methodology, and strategic recommendations' },
+      ],
+      demos: [],
+      pdf: '/pdfs/price-of-winning.pdf',
+      pdfTitle: 'Research',
+      pdfTitleAccent: 'Report',
+      pdfDescription: 'Scroll through the full research report below — data methodology, key findings, visualizations, and strategic analysis.',
+      research: false,
+      csc: false,
+      github: 'https://github.com/cjfrede53/nba-salary-strategy-analysis',
     },
   };
 
@@ -290,6 +326,33 @@
       {/if}
     </section>
 
+    {#if slug === 'nba-analysis'}
+      <section class="section container">
+        <h2>The <span class="accent">Research</span></h2>
+        <p class="summary">Most people assume higher payroll automatically leads to winning championships. This project explored a more nuanced question: what kinds of spending strategies actually create sustainable competitive success?</p>
+        <p class="summary">The analysis combined multi-source web data collection from HoopsHype, ESPN, and Basketball Reference, large-scale data cleaning and transformation, and exploratory analysis across more than a decade of NBA seasons. One of the biggest technical challenges was aligning inconsistent datasets — different team abbreviations, midseason trades, salary formatting inconsistencies, and differently structured historical records all required extensive cleaning before analysis could begin.</p>
+        <p class="summary">The project constructed two custom metrics: TopHeavyIndex, which measured how concentrated a team's payroll was among its top three players, and Cost Per Win, calculated as team payroll divided by regular season wins. These metrics reframed team evaluation around efficiency rather than raw success.</p>
+        <div class="insights-grid">
+          <div class="insight-card">
+            <h4>Higher Payroll Teams Win More</h4>
+            <p>A positive relationship exists between payroll and regular season success — but spending alone does not guarantee championships.</p>
+          </div>
+          <div class="insight-card">
+            <h4>Top Spenders Rarely Win It All</h4>
+            <p>Many recent NBA champions did not carry the league's highest payroll, suggesting smart construction often matters more than pure spending.</p>
+          </div>
+          <div class="insight-card">
+            <h4>Stars Drive Efficiency</h4>
+            <p>Superstar-heavy teams frequently generated lower cost-per-win values and stronger regular season results compared to balanced rosters.</p>
+          </div>
+          <div class="insight-card">
+            <h4>Positional Value Has Shifted</h4>
+            <p>Salary allocation has increasingly moved toward guards, playmakers, and versatile perimeter players — reflecting broader changes in modern NBA strategy.</p>
+          </div>
+        </div>
+      </section>
+    {/if}
+
     {#if slug === 'avia-games'}
       <section class="section container">
         <h2>Discovery & <span class="accent">Research</span></h2>
@@ -384,6 +447,16 @@
     </section>
     {/if}
 
+    {#if project.github}
+      <section class="section container">
+        <h2>The <span class="accent">Code</span></h2>
+        <p class="summary">Full data pipeline, cleaning notebooks, visualizations, and research report available on GitHub.</p>
+        <a href={project.github} target="_blank" rel="noopener noreferrer" class="github-btn">
+          View GitHub Repository →
+        </a>
+      </section>
+    {/if}
+
     {#if project.demos?.length}
       <section class="section container">
         <h2>The <span class="accent">Work</span></h2>
@@ -407,18 +480,8 @@
     {#if project.pdf}
       <section class="section container">
         <h2>{project.pdfTitle ?? 'Full'} <span class="accent">{project.pdfTitleAccent ?? 'Presentation'}</span></h2>
-        <p class="summary">
-          {#if slug === 'avia-games'}
-            Scroll through the full executive insights report — behavioral analysis, market research, SWOT analysis, and product recommendations.
-          {:else if slug === 'devil-exchange'}
-            Click to view or download the full UX research paper.
-          {:else if project.csc}
-            Click through for the final report including research findings, schema design, and sprint outcomes.
-          {:else}
-            Complete research slides including persona development, hypothesis framework, vision narrative, and solution design.
-          {/if}
-        </p>
-        <div class="pdf-viewer" class:pdf-viewer--tall={slug === 'avia-games'}>
+        <p class="summary">{project.pdfDescription ?? 'Scroll through the full document below, or download it directly from the embedded viewer.'}</p>
+        <div class="pdf-viewer" class:pdf-viewer--tall={slug === 'avia-games' || slug === 'nba-analysis'}>
           <iframe src={project.pdf} title="Project Presentation"></iframe>
         </div>
       </section>
@@ -718,6 +781,22 @@
     width: 100%;
     height: 100%;
     border: none;
+  }
+  .github-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.85rem 2rem;
+    background: var(--color-ink);
+    color: white;
+    border-radius: 100px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    letter-spacing: 0.02em;
+  }
+  .github-btn:hover {
+    background: var(--color-gold);
   }
   .back-btn {
     display: inline-flex;
