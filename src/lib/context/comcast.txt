@@ -206,7 +206,7 @@ Suggested interview-style answer:
 
 PROJECT 5: COMPETITIVE STRATEGY TOOL PROTOTYPE
 Project title:
-Competitive Strategy Tool Prototype
+Competitive Strategy Tool Prototype Competitive Engagement Calculator
 
 Elevator pitch:
 CJ designed an early-stage prototype for a tool that would help Comcast visualize how its offerings perform relative to key competitors. The concept focused on making market intelligence more intuitive, interactive, and actionable for strategy stakeholders.

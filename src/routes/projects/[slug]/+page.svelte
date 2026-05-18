@@ -6,6 +6,7 @@
     comcast: {
       title: 'Comcast NBCUniversal',
       subtitle: 'Innovating Engagement and Impact Evaluation',
+      headerImage: '/images/Header_Comcast.jpg',
       role: 'Senior Specialist Intern, West US HQ Channel Enablement',
       year: '2025',
       tags: ['Product Management', 'UX Design', 'Data Analytics', 'KPI'],
@@ -20,16 +21,19 @@
         { label: 'Competitive Advantage Calculator', detail: 'Prototype for strategy teams to compare Comcast vs. competitors' },
       ],
       demos: [
-        { title: 'mySource UI Walkthrough', youtubeId: 'gb1_qZb7S_w', description: "Designed and prototyped new UI integrations for mySource, the company's internal knowledge and resource hub." },
-        { title: 'Competitive Advantage Calculator', youtubeId: 'HSxq7CMkENg', description: 'Early-stage prototype helping Comcast strategy teams visualize competitive positioning.' },
+        { title: 'mySource UI Walkthrough', youtubeId: 'gb1_qZb7S_w', description: "Designed and prototyped new UI integrations for mySource, the company's internal knowledge and resource hub. The goal was to improve accessibility and engagement by rethinking how employees discover and interact with updates." },
+        { title: 'Competitive Advantage Calculator', youtubeId: 'HSxq7CMkENg', description: "Designed an early-stage prototype for a Competitive Advantage Tool aimed at helping Comcast visualize how the company's offerings perform against key competitors." },
       ],
       pdf: null,
+      pdfTitle: null,
+      pdfTitleAccent: null,
       research: false,
       csc: false,
     },
     cantina: {
       title: 'Cantina',
       subtitle: 'AI Social Platform — Trust & Safety',
+      headerImage: null,
       role: 'Product Management Intern',
       year: '2024',
       tags: ['Product Management', 'UX Research', 'Trust & Safety', 'Prototyping'],
@@ -47,12 +51,15 @@
         { title: 'Cantina Safety Feature Demo', youtubeId: 'RA7ClKAolRU', description: 'Final prototype showcasing the spice-level slider at login and in-room content warnings, directly addressing user trust and safety concerns.' },
       ],
       pdf: '/images/cantina/cantina_slides.pdf',
+      pdfTitle: 'Full',
+      pdfTitleAccent: 'Presentation',
       research: true,
       csc: false,
     },
     collegeswimconnect: {
       title: 'CollegeSwimConnect',
       subtitle: 'Built by D1 swimmers, backed by NCAA coaches',
+      headerImage: null,
       role: 'Product Manager',
       year: '2024',
       tags: ['Product Management', 'Full-Stack', 'PostgreSQL', 'Agile'],
@@ -69,12 +76,15 @@
         { title: 'CollegeSwimConnect Final Demo', youtubeId: '38-K_xHcCJ8', description: 'Final demo showcasing a 55% reduction in operational inefficiencies for administrators and 50% for D1 mentors, freeing time for high-quality mentorship.' },
       ],
       pdf: '/images/csc/FinalDemo.pdf',
+      pdfTitle: 'Final',
+      pdfTitleAccent: 'Report',
       research: false,
       csc: true,
     },
     'devil-exchange': {
       title: 'Devil Exchange',
       subtitle: 'Duke Dining UX Case Study',
+      headerImage: null,
       role: 'UX Researcher & Designer',
       year: '2024',
       tags: ['UX Research', 'Figma', 'Prototyping'],
@@ -91,6 +101,32 @@
         { title: 'Devil Exchange Prototype', youtubeId: 'S3KNn0D9d8Y', description: 'Interactive prototype of the peer-to-peer food point exchange platform addressing cost, fairness, and food access for Duke students.' },
       ],
       pdf: '/images/devil_exchange/Frederickson_UX_Case_Study_Duke_Dining.pdf',
+      pdfTitle: 'Research',
+      pdfTitleAccent: 'Paper',
+      research: false,
+      csc: false,
+    },
+    'avia-games': {
+      title: 'AviaGames',
+      subtitle: 'Consumer Discovery · 10M+ Users',
+      headerImage: null,
+      role: 'Lead Product Manager',
+      year: '2024',
+      tags: ['Product Management', 'UX Research', 'Data Analysis'],
+      accent: '#5B008C',
+      nda: false,
+      summary: 'Led consumer discovery, behavioral segmentation, and product strategy research for AviaGames in partnership with Duke Product Lab. Collaborated with researchers, stakeholders, and cross-functional teammates to investigate how cognitively motivated players engage with skill-based mobile games and how those motivations could inform future product direction.',
+      deliverables: [
+        { label: 'Behavioral Segmentation', detail: 'Analyzed 1,200+ player responses to identify key motivational personas across entertainment-driven and cognitively motivated users' },
+        { label: 'Consumer Discovery Research', detail: 'Conducted qualitative user interviews, survey analysis, and competitive benchmarking' },
+        { label: 'Strategic Product Framing', detail: 'Reframed the project away from medicalized "brain training" claims toward experiential cognitive engagement' },
+        { label: 'Insight Synthesis & Recommendations', detail: 'Translated research findings into strategic recommendations around progression systems and achievement mechanics' },
+        { label: 'Executive Insights Report', detail: 'Co-developed a consulting-style research report combining behavioral analysis, market research, SWOT analysis, and product recommendations' },
+      ],
+      demos: [],
+      pdf: '/avia/Insights_Report.pdf',
+      pdfTitle: 'Executive Insights',
+      pdfTitleAccent: 'Report',
       research: false,
       csc: false,
     },
@@ -213,9 +249,18 @@
             <span class="tag">{tag}</span>
           {/each}
         </div>
-        <h1>{project.title}</h1>
-        <p class="project-hero__subtitle">{project.subtitle}</p>
-        <p class="project-hero__role">{project.role} · {project.year}</p>
+        <div class="project-hero__inner">
+          <div class="project-hero__text">
+            <h1>{project.title}</h1>
+            <p class="project-hero__subtitle">{project.subtitle}</p>
+            <p class="project-hero__role">{project.role} · {project.year}</p>
+          </div>
+          {#if project.headerImage}
+            <div class="project-hero__image">
+              <img src={project.headerImage} alt="{project.title} presentation" />
+            </div>
+          {/if}
+        </div>
       </div>
       <div class="project-hero__bar"></div>
     </div>
@@ -244,6 +289,34 @@
         </ul>
       {/if}
     </section>
+
+    {#if slug === 'avia-games'}
+      <section class="section container">
+        <h2>Discovery & <span class="accent">Research</span></h2>
+        <p class="summary">To understand how cognitively motivated users engage with AviaGames' ecosystem, I conducted large-scale survey analysis, behavioral segmentation, consumer discovery interviews, literature review, and competitive analysis.</p>
+        <p class="summary">The project originally explored whether users perceived games like Solitaire Clash as tools for memory or cognitive improvement. However, research revealed that players rarely framed the experience in clinical or measurable terms. Instead, users consistently described the games as mentally stimulating because they required focus, strategy, quick thinking, and problem solving.</p>
+        <p class="summary">A key finding was that cognitively motivated users and entertainment-focused users behaved remarkably similarly. While their stated motivations differed, both groups valued short-session gameplay, challenge, progression, and low-friction entertainment experiences.</p>
+        <p class="summary">These insights helped reposition the opportunity away from "brain training" claims and toward lightweight systems that reinforce mastery, engagement, and perceived mental stimulation without disrupting the casual gameplay experience.</p>
+        <div class="insights-grid">
+          <div class="insight-card">
+            <h4>Different Motivations, Similar Behaviors</h4>
+            <p>Entertainment-driven and cognitively motivated users interacted with the platform in highly similar ways, suggesting that designing for one audience should not alienate the other.</p>
+          </div>
+          <div class="insight-card">
+            <h4>Cognitive Engagement Was Experiential</h4>
+            <p>Users described feeling mentally engaged through challenge, focus, and strategy rather than measurable cognitive improvement, reinforcing the importance of perception and gameplay experience.</p>
+          </div>
+          <div class="insight-card">
+            <h4>Casual, Low-Friction Play Was Essential</h4>
+            <p>Even cognitively motivated players resisted experiences that felt overly educational, clinical, or "test-like," emphasizing the importance of maintaining accessibility and flexibility.</p>
+          </div>
+          <div class="insight-card">
+            <h4>Opportunity in the Metagame</h4>
+            <p>Research suggested stronger opportunities in progression systems, streaks, achievements, and skill feedback loops than in major changes to core gameplay mechanics.</p>
+          </div>
+        </div>
+      </section>
+    {/if}
 
     {#if project.research}
     <section class="section container">
@@ -333,17 +406,19 @@
 
     {#if project.pdf}
       <section class="section container">
-        <h2>Full <span class="accent">Presentation</span></h2>
+        <h2>{project.pdfTitle ?? 'Full'} <span class="accent">{project.pdfTitleAccent ?? 'Presentation'}</span></h2>
         <p class="summary">
-          {#if project.csc}
-            Click through for the final report including research findings, schema design, and sprint outcomes.
+          {#if slug === 'avia-games'}
+            Scroll through the full executive insights report — behavioral analysis, market research, SWOT analysis, and product recommendations.
           {:else if slug === 'devil-exchange'}
             Click to view or download the full UX research paper.
+          {:else if project.csc}
+            Click through for the final report including research findings, schema design, and sprint outcomes.
           {:else}
             Complete research slides including persona development, hypothesis framework, vision narrative, and solution design.
           {/if}
         </p>
-        <div class="pdf-viewer">
+        <div class="pdf-viewer" class:pdf-viewer--tall={slug === 'avia-games'}>
           <iframe src={project.pdf} title="Project Presentation"></iframe>
         </div>
       </section>
@@ -360,7 +435,6 @@
         <div class="chat-header__dot"></div>
         <div>
           <div class="chat-header__title">Informational AI Assistant</div>
-          <div class="chat-header__sub">Powered by CJ's own project notes</div>
         </div>
       </div>
       <span class="chat-header__badge">AI</span>
@@ -479,6 +553,26 @@
     border: 1px solid rgba(255,255,255,0.15);
     color: rgba(255,255,255,0.6);
   }
+  .project-hero__inner {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .project-hero__text {
+    flex: 1;
+  }
+  .project-hero__image {
+    width: 280px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0.9;
+  }
+  .project-hero__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
   .project-hero h1 {
     color: white;
     font-size: clamp(2rem, 5vw, 3.5rem);
@@ -521,6 +615,33 @@
     border-radius: 0 6px 6px 0;
     font-size: 0.9rem;
     line-height: 1.5;
+  }
+  .insights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .insight-card {
+    background: var(--color-linen);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-gold);
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+  }
+  .insight-card h4 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-ink);
+    margin-bottom: 0.5rem;
+  }
+  .insight-card p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--color-ink-soft);
+    margin: 0;
+    max-width: none;
   }
   .csc-role {
     display: grid;
@@ -589,6 +710,10 @@
     overflow: hidden;
     border: 1px solid var(--color-border);
   }
+  .pdf-viewer--tall {
+    aspect-ratio: unset;
+    height: 80vh;
+  }
   .pdf-viewer iframe {
     width: 100%;
     height: 100%;
@@ -610,8 +735,6 @@
     border-color: var(--color-gold);
     color: var(--color-gold);
   }
-
-  /* Chat Sidebar */
   .chat-sidebar {
     width: 340px;
     min-width: 340px;
@@ -654,11 +777,6 @@
     font-weight: 600;
     color: white;
     letter-spacing: 0.01em;
-  }
-  .chat-header__sub {
-    font-size: 0.68rem;
-    color: rgba(255,255,255,0.7);
-    margin-top: 1px;
   }
   .chat-header__badge {
     font-size: 0.65rem;
@@ -822,7 +940,7 @@
     cursor: not-allowed;
   }
   @media (max-width: 700px) {
-    .csc-role, .csc-process {
+    .csc-role, .csc-process, .insights-grid {
       grid-template-columns: 1fr;
     }
   }
