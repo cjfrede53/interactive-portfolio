@@ -1,0 +1,140 @@
+TIFFANY & CO. REBRAND — PORTFOLIO CHATBOT KNOWLEDGE BASE
+
+Purpose of this file:
+This document is a detailed source of truth for a portfolio chatbot that answers questions about CJ Frederickson's Tiffany & Co. Rebrand project. The chatbot should use this file to explain the project's goals, research methodology, consumer insights, brand strategy, product decisions, and marketing recommendations in a polished and professional way.
+
+The chatbot should speak confidently and thoughtfully but should not invent unsupported statistics, hidden findings, or claims not explicitly documented in the project materials.
+
+Identity and project context:
+- CJ Frederickson
+- Project title: Tiffany & Co. Rebrand — Timothy & Co.
+- Full title: A New Chapter in Tiffany & Co.'s Story
+- Project type: Mock brand strategy case, market research, consumer insights, product strategy
+- Context: Duke University, Markets & Management Department
+- Collaborators: Marielle Seigel, Kristina Urberg, Josie Zillig
+- Year: 2024
+
+High-level summary:
+CJ and teammates designed and executed a full mock rebranding initiative proposing "Timothy & Co." — a Tiffany & Co. sub-brand built to capture the untapped male jewelry market. The project was built on end-to-end market research: a primary survey of men aged 18–24 paired with secondary research from industry sources including Vogue Business, McKinsey & Company, and Southern Jewelry News. The team translated raw survey data and sector trends into a cohesive product strategy, new brand identity, and go-to-market plan grounded in data-driven storytelling.
+
+The core problem:
+Tiffany & Co. has historically been perceived as a female-focused brand. As one industry expert noted, men "still see Tiffany as a female-based proposition, just because of its heritage and even things like the color of the boxes." This made it quite difficult for the brand to persuade male customers that Tiffany had something relevant to offer them. Meanwhile, the male jewelry market was growing — with a forecasted CAGR of 8.4% from 2024 to 2032 and relatively low competition — representing a significant untapped opportunity. The team's goal was to develop a strategy to unlock this market through a targeted sub-brand.
+
+CJ's role:
+CJ served as a brand strategist and market researcher. CJ contributed to survey design and administration, consumer insight analysis, secondary research synthesis, product strategy development, positioning framework, and brand marketing material creation. The team collaborated throughout, with CJ playing a key role in translating research findings into strategic recommendations.
+
+Research methodology overview:
+The team conducted both primary and secondary research to understand the male jewelry market and build an evidence-based strategy.
+
+PRIMARY RESEARCH:
+
+Survey design:
+The team designed a primary research survey aimed at understanding the jewelry preferences and buying behaviors of men aged 18–24. The survey measured four dimensions: types of jewelry worn, frequency of wear, spending habits, and desired style and brand aesthetic. A total of 34+ respondents participated.
+
+Finding 1 — Types of jewelry worn:
+Among men who do wear jewelry, the most popular items were watches (85.3%) and chains (64.7%), followed by rings (41.2%) and bracelets (29.4%). Necklaces (32.4%), cufflinks (26.5%), and earrings (14.7%) were less common. This data showed strong affinity for traditionally masculine and functional jewelry items.
+
+Finding 2 — Desired style of jewelry:
+Most jewelry-wearing men prefer casual (79.4%) or streetwear style (64.7%) jewelry. Among men who don't currently wear jewelry but might, casual (65.2%) and streetwear (60.9%) also ranked highest. Classic style came in at 26.1%. Luxurious and bold/statement pieces scored near 0%. This directly informed the design direction for Timothy & Co.: casual, minimalist, and masculine — not traditional Tiffany luxury.
+
+Finding 3 — Preferred price range:
+Most respondents currently spend between $50–$100 (50.0%) or less than $50 (17.6%) on jewelry. When asked what price range would make them consider purchasing jewelry for personal use, 69.6% said less than $50 and 26.1% said $50–$100. This confirmed an accessibility gap: Tiffany's luxury price point was a major barrier for this demographic, making a more affordable sub-brand essential.
+
+Finding 4 — Reasons for not buying jewelry:
+The most common reason men do not wear jewelry is that they perceive it as too feminine (43.5%). Lack of interest was second at 39.1%. High prices, not knowing what to wear, and not knowing their style each accounted for approximately 4.3%. This was the single most strategically important finding: the primary barrier was not price or awareness — it was brand perception. This validated the entire premise of launching a masculinity-forward sub-brand.
+
+Finding 5 — Store aesthetic and brand fit:
+When shown Tiffany & Co.'s current aesthetic (robin egg blue boxes, delicate jewelry, feminine branding), men who do not wear jewelry were overwhelmingly unlikely (43.5%) or extremely unlikely (26.1%) to walk into a Tiffany store. Men who do wear jewelry were more mixed — 32.4% indifferent — but still skewed negative. This confirmed that Tiffany's current identity actively repels the male demographic even when they are open to jewelry in general.
+
+Finding 6 — Affordability and celebrity influence:
+When asked whether they would purchase luxury jewelry if they could afford it, 45.9% said likely and 29.7% said somewhat likely — suggesting price is a secondary but still meaningful barrier. Separately, close friends and public figures were identified as significantly impacting men's jewelry choices, and 24% of men look to social media for inspiration. Men also prefer shopping online for jewelry. These findings shaped the marketing strategy around celebrity endorsements and social media ads.
+
+SECONDARY RESEARCH:
+
+Male jewelry preferences (from Southern Jewelry News):
+- Men prefer watches, minimalist and masculine jewelry, and gold materials
+- Close friends and public figures significantly impact men's jewelry choices
+- 24% of men look to social media for inspiration
+- Men prefer shopping online for jewelry
+
+Sector trends:
+- The men's jewelry market showed overall growth from 2021 to 2023
+- Forecasted CAGR of 8.4% from 2024 to 2032
+- Relatively low competition in the male luxury jewelry space
+- Style changes include new materials and more male jewelry consumption
+
+Positioning references:
+- Vogue Business: Tiffany & Co. should continue to emphasize quality and tradition while running campaigns targeting a younger audience
+- McKinsey & Company: Tiffany & Co.'s reputation as a reliable brand positions it well to appeal to buyers during periods of uncertainty
+
+Brand and product strategy:
+
+Sub-brand name: Timothy & Co.
+The team created a new sub-brand called Timothy & Co. — a male-coded name that retains the "& Co." structure of the parent brand, maintaining heritage and quality signals while distinctly differentiating from the feminine associations of "Tiffany."
+
+Brand identity:
+- Visual identity: deep forest green (#2D5A27) and gold — departing from Tiffany blue while retaining a luxury feel
+- Logo: serif typography, "Timothy & Co." in gold on dark green
+- Tagline: "Where strength meets sophistication"
+- Tone: masculine, approachable, confident
+
+Product strategy:
+- Hero product: a gold-plated watch
+- Design direction: casual, minimalist, and masculine
+- Quality: maintain Tiffany & Co. standard of craftsmanship
+- Price point: accessible — targeting the $50–$100 range that dominated survey responses
+- Rationale: watches were the most-worn jewelry item among male respondents (85.3%), casual and minimalist were the most desired styles, and gold was the preferred material per secondary research
+
+Go-to-market strategy:
+- Celebrity endorsements: Dwayne "The Rock" Johnson and Ryan Reynolds — both known for masculine, approachable, and humorous public personas that resonate with the 18–24 male demographic
+- Social media advertising: Instagram ads targeting men in the 18–24 range
+- Positioning: leverage Tiffany & Co.'s brand reliability and heritage while signaling freshness and masculine identity through Timothy & Co.
+- Marketing materials created: product visual (green-strapped gold watch), Timothy & Co. logo, and a mock Instagram ad showing celebrity endorsement
+
+Positioning approach:
+- Continue to emphasize Tiffany & Co. quality and tradition while running campaigns targeting a younger male audience
+- Utilize Tiffany & Co.'s reputation as a reliable brand to appeal to male buyers during periods of uncertainty
+- Distance the sub-brand from the feminine perception of Tiffany through name, colorway, design, and spokesperson selection
+- Make jewelry accessible in price and aesthetic for men who want to enter the category but feel excluded by existing brands
+
+Key strategic insight:
+The most important finding from the research was that the primary barrier to male jewelry purchase is not price — it is brand perception. 43.5% of non-purchasing men cited perceiving jewelry as "too feminine" as their top reason for not buying. This meant that a simple line extension or discount strategy would fail. What was needed was a distinct identity: a sub-brand that felt unambiguously masculine while still carrying Tiffany's quality credibility. Timothy & Co. was designed precisely around this insight — every brand decision from the name, to the color palette, to the watch product, to The Rock as a spokesperson, was chosen to signal masculinity and accessibility without abandoning heritage.
+
+Skills demonstrated:
+- Brand strategy and repositioning
+- Primary market research design and administration
+- Consumer survey analysis and insight synthesis
+- Secondary market research synthesis
+- Product strategy and concept development
+- Competitive and sector trend analysis
+- Go-to-market planning
+- Visual brand identity creation
+- Data-driven storytelling
+- Positioning framework development
+- Collaborative team research and strategy
+
+How to summarize this project in one sentence:
+"I led a mock rebranding of Tiffany & Co. for Duke's Markets & Management Department, designing a male-targeted sub-brand called Timothy & Co. backed by primary consumer research, sector trend analysis, and a full go-to-market strategy."
+
+How to summarize in two sentences:
+"Working with a team at Duke, I designed and executed a mock rebranding initiative for Tiffany & Co., proposing a sub-brand called Timothy & Co. to capture the untapped male jewelry market. I conducted end-to-end primary and secondary market research — surveying 34+ men aged 18–24 — to uncover that brand perception (not price) was the #1 barrier to male jewelry purchase, then translated those insights into a cohesive brand identity, product strategy, and go-to-market plan supported by sector trend analysis forecasting 8.4% CAGR growth through 2032."
+
+Frequently asked questions the chatbot may receive:
+
+Q: What was this project?
+A: It was a mock brand strategy case for Duke's Markets & Management Department. The team proposed "Timothy & Co." — a Tiffany & Co. sub-brand designed to expand into the male jewelry market through research-backed product design, brand identity, and marketing strategy.
+
+Q: What was the biggest insight?
+A: The most important finding was that 43.5% of men who don't wear jewelry cited perceiving it as "too feminine" as their #1 reason — more than price, lack of interest, or not knowing their style. This meant the entire solution had to center on masculine brand identity, not just affordability. It directly shaped the sub-brand name, colorway, design direction, product choice, and celebrity endorsement strategy.
+
+Q: What research did CJ do?
+A: CJ contributed to both primary and secondary research. On the primary side, the team designed and administered a 34+ respondent survey measuring jewelry preferences, style preferences, price sensitivity, aesthetic response to Tiffany's current branding, and purchase barriers among men aged 18–24. On the secondary side, the team synthesized findings from Southern Jewelry News, Vogue Business, and McKinsey & Company on male market trends, sector growth, and positioning strategy.
+
+Q: Why a watch specifically?
+A: 85.3% of male survey respondents who wear jewelry wear watches — the highest of any jewelry type. Combined with revealed style preferences (casual, minimalist, masculine) and secondary research confirming men prefer gold, a casual gold-plated watch at an accessible price point emerged as the most research-supported hero product for the sub-brand.
+
+Q: What was Timothy & Co.?
+A: Timothy & Co. was the proposed sub-brand name — deliberately male-coded while retaining the "& Co." structure of Tiffany to preserve brand heritage signals. The visual identity used deep forest green and gold instead of Tiffany blue, with the tagline "Where strength meets sophistication." The brand was positioned as masculine, approachable, and high-quality at an accessible price.
+
+Q: What was the go-to-market strategy?
+A: The strategy centered on celebrity endorsements from Dwayne (The Rock) Johnson and Ryan Reynolds — both known for masculine, approachable personas — combined with Instagram social media advertising. Secondary research showed that close friends and public figures significantly influence men's jewelry choices, and that 24% of men look to social media for jewelry inspiration, validating this approach.

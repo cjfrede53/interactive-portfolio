@@ -1,0 +1,189 @@
+IMDB REGRESSION ANALYSIS — PORTFOLIO CHATBOT KNOWLEDGE BASE
+
+Purpose of this file:
+This document is a detailed source of truth for a portfolio chatbot that answers questions about CJ Frederickson's IMDb Regression Analysis project. The chatbot should use this file to explain the project's goals, data, methodology, modeling decisions, results, and limitations in a polished and professional way.
+
+The chatbot should speak confidently and thoughtfully but should not invent unsupported statistics, hidden findings, or claims not explicitly documented in the project materials.
+
+Identity and project context:
+- CJ Frederickson
+- Project title: Analysis of Divergence Between Audience and Critic Scores for Top IMDb Films from 1950–2019
+- Project type: Statistical modeling, exploratory data analysis, logistic regression, R
+- Context: Duke University Statistical Science Department
+- Collaborators: Toma Shigaki-Than, Camden Reeves
+- Year: 2025
+
+High-level summary:
+CJ and teammates investigated the divergence between audience scores (IMDb) and critic scores (MetaScore) for top-ranked films from 1950 to 2019. The project began with exploratory data analysis across a dataset of 1,000 top IMDb films, then built and evaluated logistic regression models to predict whether a film's audience score significantly diverged from its critic score. The final model used gross revenue, runtime, decade of release, and number of votes to classify films as divergent or non-divergent, achieving an AUC of 0.628 and sensitivity of 52.6% at a 0.3 threshold.
+
+The core problem and motivation:
+Professional critics and general audiences often evaluate films through fundamentally different lenses. Critics tend to emphasize artistic merit, narrative structure, and technical execution, while audiences prioritize entertainment, emotional resonance, and accessibility. This divergence creates confusion for consumers navigating conflicting reviews. It also has direct implications for movie studios, streaming platforms, and marketers who rely on both critical acclaim and mass appeal to guide content investment and promotional strategy.
+
+Prior research (Moon, Bergey, and Iacobucci, 2010) shows that user-driven ratings have powerful word-of-mouth effects, often extending a film's commercial relevance. Understanding which film characteristics drive divergence has practical value for consumer behavior research and content recommendation systems.
+
+Research question:
+What factors contribute to the differences in audience and critic scores, and how can we use these factors to predict the likelihood of significant divergence between the two?
+
+The study focused on modeling the odds that audience scores exceed critic scores by at least one standard deviation — shifting attention from average film quality to identifying "fan-favorite" films that resonate with general audiences even when critics disagree.
+
+Data:
+The dataset consists of the top 1,000 movies on IMDb, obtained through data scraping.
+
+Data cleaning steps:
+- Dropped observations with NA values in Gross Revenue (these were random with no discernible pattern, so dropping them did not compromise the dataset)
+- Created the variable "difference" — the gap between scaled IMDb Score and MetaScore (positive = audience scores higher than critics; negative = critics score higher)
+- Consolidated certificate ratings into modern categories: G, PG, PG-13, R, and Other (the original data included outdated and international ratings)
+- Excluded films released before the 1950s — few observations existed from that era, and because IMDb was not introduced until the 1990s, older films were added retroactively, introducing potential bias
+
+Predictors considered:
+- Runtime (numerical, in minutes)
+- Gross Revenue (numerical, in millions)
+- Censorship Certificate (categorical: G, PG, PG-13, R, Other)
+- Decade Released (categorical: 1950s through 2010s)
+- Number of Votes on IMDb (numerical)
+
+Response variable:
+- difference: the raw score gap between scaled IMDb audience score and MetaScore
+- difference_binary: a binary variable created for logistic regression
+  - 1 (divergent): difference less than -13 or greater than 9, corresponding to approximately ±1 standard deviation from the mean
+  - 0 (non-divergent): otherwise
+
+Binary variable construction rationale:
+The difference distribution was approximately normal with a slight right skew, a mean of approximately -2.2, and a standard deviation of approximately 11.9. Setting thresholds at roughly one standard deviation above and below the mean captured statistically meaningful divergence while maintaining a reasonable sample size. This approach identified genuine fan-favorite or controversial films rather than flagging minor fluctuations.
+
+Summary statistics for response variables:
+- IMDB Score (scaled): mean 79.3, median 79, SD 2.94, range 76–93
+- MetaScore: mean 76.7, median 77, SD 12.2, range 28–100
+- Difference: mean 2.62, median 2, SD 11.8, range -21 to 49
+
+Summary statistics for numerical predictors:
+- Gross Revenue: mean $80.1M, median $35.9M, SD $116M, range $0.001M–$937M (right skewed)
+- Runtime: mean 124 minutes, median 120 minutes, SD 25.6 minutes, range 72–228 minutes (fairly normal, slight right skew)
+- Number of Votes: mean 361,000, median 241,000, SD 357,000, range 25,200–2.34M (right skewed)
+
+EDA findings:
+
+Correlation matrix:
+A strong correlation of 0.62 was found between IMDB Score and number of votes. To prevent multicollinearity, both were not included in the same model simultaneously.
+
+Univariate findings:
+- IMDb scores for top-1000 films are tightly clustered between 76–93 — these are highly rated films by construction
+- MetaScore is more widely distributed (28–100), suggesting critics apply a broader range of assessments
+- The difference variable is approximately normally distributed with slight left skew — it is nearly equally common for MetaScore to exceed or fall below IMDb score, though slightly more often lower
+- Gross revenue and number of votes are both heavily right-skewed
+- Newer decades are more heavily represented in the dataset, as expected (newer films added in real time; older films added retroactively)
+
+Bivariate findings:
+- No clear linear relationship between gross revenue and the score difference
+- No clear linear relationship between runtime and the score difference
+- Negative correlation between decade released and IMDb score — newer films tend to have lower median IMDb scores
+- Negative correlation between decade released and MetaScore — critics also tend to score newer films lower
+- The score difference tends to be lower (critics score higher relative to audience) in older decades
+
+Interaction effects:
+Visualizations suggested potential interaction effects between gross revenue and certificate rating, and between gross revenue and decade released. Specifically, the relationship between commercial performance and score divergence appeared to differ by certificate type.
+
+Methodology:
+
+Step 1 — Linear regression exploration:
+The team first explored linear regression to model the raw difference score. Diagnostics revealed no clear linear relationship between the response and numerical predictors. The Adjusted R² was only 8.81%, indicating the model explained very little of the variation. The team transitioned to logistic regression given these limitations and the binary nature of the outcome of interest.
+
+Step 2 — Full logistic regression model:
+A full logistic model was fit including: gross_cent (centered gross revenue), runtime_cent (centered runtime), decade (categorical), votes_cent (centered votes), certificate (categorical), and an interaction term gross_cent × certificate.
+
+Step 3 — Model selection via drop-in-deviance test and AIC/BIC:
+The team performed a drop-in-deviance test comparing the full model (with certificate and interaction) against a reduced model (excluding the interaction). The interaction improved deviance modestly, suggesting some moderating effect of certificate on gross revenue's impact.
+
+However, when comparing AIC and BIC between two candidate models — one with certificate and the gross × certificate interaction, one without any certificate variables — both AIC and BIC favored the simpler model. Because BIC penalizes complexity more heavily, the fact that both criteria pointed to the simpler model provided sufficient evidence to drop certificate and its interaction terms.
+
+Final logistic regression model predictors:
+- gross_cent (centered gross revenue)
+- runtime_cent (centered runtime)
+- decade (categorical: 1950s as reference)
+- votes_cent (centered number of votes)
+
+Results:
+
+Classification threshold adjustment:
+At the default threshold of 0.5, the model overwhelmingly predicted the majority class (non-divergent), making it ineffective at identifying divergent films. Because divergent films are rare by construction (defined by ±1 SD), the team lowered the classification threshold to 0.3 to improve sensitivity.
+
+Confusion matrix at 0.3 threshold:
+- True Negatives (predicted 0, actually 0): 251
+- False Positives (predicted 1, actually 0): 226
+- False Negatives (predicted 0, actually 1): 74
+- True Positives (predicted 1, actually 1): 144
+
+Model performance metrics:
+- Accuracy: 56.8%
+- Kappa: 0.157
+- Sensitivity (Recall): 52.6%
+- Precision: 77.2%
+- Specificity: 66.1%
+- AUC (ROC): 0.628
+
+Interpretation of model performance:
+Sensitivity (52.6%) captures the model's ability to identify films where audience and critic scores genuinely diverge — the fan-favorite or controversial cases the research question is most concerned with. Specificity (66.1%) captures the ability to correctly classify typical non-divergent films.
+
+Given the research goal of understanding what drives divergence, sensitivity was prioritized. Missing a truly divergent film (false negative) is more detrimental to the study's purpose than incorrectly flagging a non-divergent film (false positive). The lowered threshold of 0.3 directly improved sensitivity at the expected cost of more false positives.
+
+The AUC of 0.628 indicates the model performs meaningfully better than random chance (0.5) at ranking films by their likelihood of divergence, but its discriminative ability remains moderate.
+
+Limitations:
+The model's moderate performance reflects the fundamental constraints of using only structural film attributes (gross revenue, runtime, decade, number of votes) to predict audience–critic divergence. These are broad features that cannot capture:
+- Genre, tone, and content-based characteristics
+- Award recognition and cultural prestige
+- Sentiment in written reviews
+- Audience demographics and word-of-mouth dynamics
+- The rise of blockbuster franchises and streaming platforms, which have shifted the relationship between commercial performance and critical reception over time
+
+Future research could benefit from incorporating genre, award nomination data, sentiment analysis of reviews, or audience demographic information to build a more comprehensive predictive model.
+
+CJ's role:
+CJ contributed to the full project lifecycle as a data scientist and researcher — including data cleaning and variable engineering, exploratory data analysis, correlation analysis, model building and selection, threshold tuning, performance evaluation, and written report authorship.
+
+Technical tools used:
+- R (primary language)
+- Statistical modeling: linear regression, logistic regression
+- Model selection: AIC, BIC, drop-in-deviance test
+- Performance evaluation: confusion matrix, ROC curve, AUC, sensitivity, specificity, precision
+- Data visualization: ggplot2
+
+Skills demonstrated:
+- Exploratory data analysis (EDA)
+- Data cleaning and variable engineering
+- Correlation analysis and multicollinearity detection
+- Logistic regression modeling
+- Model comparison and selection (AIC/BIC, drop-in-deviance)
+- Classification threshold tuning
+- ROC/AUC analysis
+- Statistical interpretation and written communication
+- R programming
+
+How to summarize this project in one sentence:
+"I used logistic regression in R to model the divergence between audience and critic scores for 1,000 top IMDb films, finding that decade of release was the strongest predictor of significant audience–critic score gaps."
+
+How to summarize in two sentences:
+"Working with a team at Duke, I analyzed the gap between IMDb audience scores and MetaScores for 1,000 top films from 1950–2019, building and evaluating logistic regression models to predict whether a film's audience score diverged significantly from critic consensus. After exploring linear regression, running a drop-in-deviance test, and comparing AIC/BIC across candidate models, our final model — using gross revenue, runtime, decade, and number of votes — achieved an AUC of 0.628 and sensitivity of 52.6% at a lowered 0.3 classification threshold."
+
+Frequently asked questions the chatbot may receive:
+
+Q: What was this project about?
+A: The project analyzed divergence between IMDb audience scores and critic MetaScores for 1,000 top-ranked films from 1950 to 2019. Using R, the team built logistic regression models to predict which films were likely to show significant audience–critic disagreement, and investigated which film characteristics — decade, gross revenue, runtime, number of votes — best explained that divergence.
+
+Q: What was the main finding?
+A: Decade of release was the strongest and most statistically significant predictor of audience–critic divergence. Films from the 1980s, 1990s, and 2000s showed the most pronounced divergence, with audience scores tending to run higher than critic scores during those decades. Structural features like gross revenue and runtime had much weaker predictive power on their own.
+
+Q: Why logistic regression instead of linear regression?
+A: The team initially tried linear regression on the raw score difference, but diagnostics showed no clear linear relationship between the response and predictors, and the Adjusted R² was only 8.81% — the model explained almost nothing. Because the research question was ultimately about whether a film diverges meaningfully (a yes/no outcome), logistic regression on a binary variable was a more appropriate and informative framework.
+
+Q: Why was the classification threshold lowered to 0.3?
+A: At the default 0.5 threshold, the model overwhelmingly predicted non-divergent films because divergent films are rare by construction — they were defined as falling beyond ±1 standard deviation from the mean difference. Lowering the threshold to 0.3 significantly improved sensitivity (the model's ability to catch truly divergent films), which mattered more for the research question than avoiding false positives.
+
+Q: What does the AUC of 0.628 mean?
+A: An AUC of 0.5 would mean the model is no better than random guessing. An AUC of 0.628 means the model has moderate discriminative ability — it meaningfully outperforms chance at ranking films by their likelihood of audience–critic divergence, but cannot strongly separate divergent from non-divergent films. This reflects the limits of predicting a subjective cultural outcome using only structural film attributes.
+
+Q: What were the model's limitations?
+A: The model only used broad structural attributes — gross revenue, runtime, decade, and number of votes — which can't capture the content-level and cultural factors that likely drive divergence the most. Genre, tone, award recognition, streaming platform effects, blockbuster franchise dynamics, and audience demographics all likely play important roles that weren't included in the dataset. Future work could incorporate these richer variables for better predictive power.
+
+Q: Why was certificate (censorship rating) dropped from the final model?
+A: The team initially included certificate and a gross revenue × certificate interaction term. While the interaction modestly improved model fit in a drop-in-deviance test, both AIC and BIC — metrics that penalize model complexity — favored the simpler model without certificate variables. When both criteria agree, it's strong evidence to prefer parsimony, so the certificate variable and its interaction were removed from the final model.

@@ -15,6 +15,8 @@
     { href: '/projects/devil-exchange', label: 'Devil Exchange' },
     { href: '/projects/avia-games', label: 'AviaGames' },
     { href: '/projects/nba-analysis', label: 'NBA Data Science' },
+    { href: '/projects/tiffany-rebrand', label: 'Tiffany & Co. Rebrand' },
+    { href: '/projects/imdb-regression', label: 'IMDb Regression' }
   ];
 
   function isActive(href) {
