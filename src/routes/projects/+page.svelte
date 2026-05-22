@@ -73,15 +73,15 @@
     {
       slug: 'duke-athletics',
       title: 'Duke Athletics Marketing',
-      subtitle: '3M Views · 500K Monthly Reach',
+      subtitle: '8M+ Cross-Platform Views',
       role: 'Digital Content Creator',
-      tags: ['Digital Marketing', 'TikTok', 'Instagram'],
+      tags: ['Digital Marketing', 'TikTok', 'Instagram', 'Content Strategy'],
       accent: '#003087',
       year: '2023–Present',
-      logo: null,
+      logo: '/images/logos/athletics.png',
       logos: null,
       logoSize: '40px',
-      keywords: ['duke athletics', 'tiktok', 'instagram', 'marketing', 'content', 'social media', 'video', 'reach', 'views'],
+      keywords: ['duke athletics', 'tiktok', 'instagram', 'marketing', 'content', 'social media', 'video', 'reach', 'views', 'blue devil', 'engagement', 'content creation', 'cross-platform'],
     },
     {
       slug: 'tiffany-rebrand',
@@ -91,7 +91,7 @@
       tags: ['Brand Strategy', 'Market Research', 'Consumer Insights', 'Product Strategy'],
       accent: '#2D5A27',
       year: '2024',
-      logo: null,
+      logo: '/images/logos/timothyLogo.png',
       logos: null,
       logoSize: '40px',
       keywords: ['tiffany', 'rebrand', 'brand strategy', 'market research', 'timothy', 'luxury', 'jewelry', 'male', 'consumer insights', 'positioning', 'survey', 'primary research', 'duke', 'marketing'],
@@ -127,19 +127,6 @@
       ],
       logoSize: '40px',
       keywords: ['imdb', 'regression', 'r', 'statistics', 'data science', 'eda', 'logistic', 'ratings', 'audience', 'critic', 'metascore', 'auc', 'roc', 'classification', 'feature engineering', 'duke', 'statistical science'],
-    },
-    {
-      slug: 'xinjiang-analysis',
-      title: 'Xinjiang Data Analysis',
-      subtitle: 'Human Rights · Statistical Modeling',
-      role: 'Data Analyst',
-      tags: ['Data Analysis', 'R', 'Data Ethics'],
-      accent: '#8B0000',
-      year: '2023',
-      logo: null,
-      logos: null,
-      logoSize: '40px',
-      keywords: ['xinjiang', 'human rights', 'data ethics', 'statistical modeling', 'r', 'analysis'],
     },
   ];
 
@@ -244,7 +231,7 @@
             <span class="category__count">{filteredBrandData.length} result{filteredBrandData.length !== 1 ? 's' : ''}</span>
           {/if}
         </div>
-        <div class="grid">
+        <div class="grid grid--four">
           {#each filteredBrandData as project}
             <a href="/projects/{project.slug}" class="card" style="--accent: {project.accent}">
               <div class="card__top">
@@ -395,11 +382,11 @@
   }
 
   .category__label {
-    font-size: 0.7rem;
-    font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--color-muted);
+    letter-spacing: 0.08em;
+    color: var(--color-ink);
   }
 
   .category__count {
@@ -413,6 +400,11 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 1rem;
+  }
+
+  .grid--four {
+    grid-template-columns: repeat(4, minmax(0, 240px));
+    justify-content: center;
   }
 
   .card {
@@ -538,5 +530,18 @@
 
   .card:hover .card__accent-bar {
     transform: scaleX(1);
+  }
+
+  @media (max-width: 900px) {
+    .grid--four {
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: unset;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .grid--four {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

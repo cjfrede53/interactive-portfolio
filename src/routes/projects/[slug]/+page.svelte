@@ -220,6 +220,40 @@
       csc: false,
       github: 'https://github.com/cjfrede53/IMDB-films-regression',
     },
+    'duke-athletics': {
+      title: 'Duke Athletics Marketing',
+      subtitle: '@thebluedevil — TikTok & Instagram',
+      headerImage: null,
+      role: 'Digital Content Creator',
+      year: '2023–Present',
+      tags: ['Digital Marketing', 'TikTok', 'Instagram', 'Content Strategy'],
+      accent: '#003087',
+      nda: false,
+      summary: 'Built and grew two official Duke Athletics social media accounts from the ground up — @thebluedevil on TikTok and Instagram — producing original content featuring the Duke Blue Devil mascot across sporting events, campus moments, and cultural trends. Grew both accounts to 20K+ followers each and accumulated over 8 million cross-platform views, 500K+ Instagram engagements, and 300K+ TikTok likes through consistent content creation and platform-native storytelling.',
+      deliverables: [
+        { label: 'TikTok Account (@thebluedevil)', detail: 'Grew account to 23.7K followers and 286.2K+ likes from scratch — producing short-form video content across sporting events, campus life, and trending formats' },
+        { label: 'Instagram Account (@thebluedevil)', detail: 'Grew account to 22.8K followers — amassing 5M+ video views and 500K+ engagements, with a single month reaching 513K accounts (+5,999% growth)' },
+        { label: 'Cross-Platform Content Strategy', detail: "Developed and executed a dual-platform content calendar tailored to each platform's audience behavior — Reels and photo carousels on Instagram, trend-driven short video on TikTok" },
+        { label: 'Viral Content', detail: 'Produced multiple high-performing videos exceeding 100K views individually, including a 413.8K-view TikTok and a 1.7M-view Instagram Reel' },
+      ],
+      demos: [],
+      stats: [
+        { value: '8M+', label: 'Cross-Platform Views' },
+        { value: '500K+', label: 'Instagram Engagements' },
+        { value: '300K+', label: 'TikTok Likes' },
+      ],
+      socialLinks: [
+        { platform: 'TikTok', url: 'https://www.tiktok.com/@thebluedevil', label: '@thebluedevil' },
+        { platform: 'Instagram', url: 'https://www.instagram.com/thebluedevil/', label: '@thebluedevil' },
+      ],
+      pdf: null,
+      pdfTitle: null,
+      pdfTitleAccent: null,
+      pdfDescription: null,
+      research: false,
+      csc: false,
+      github: null,
+    },
   };
 
   let slug = $derived($page.params.slug);
@@ -528,6 +562,53 @@
             </div>
           </div>
         {/each}
+      </section>
+    {/if}
+
+    {#if slug === 'duke-athletics'}
+      <section class="section container">
+        <h2>By The <span class="accent">Numbers</span></h2>
+        <p class="summary">Built both the TikTok and Instagram accounts from scratch. These are the cross-platform results.</p>
+        <div class="duke-stats">
+          <div class="duke-stat">
+            <span class="duke-stat__number">8M+</span>
+            <span class="duke-stat__label">Cross-Platform Views</span>
+          </div>
+          <div class="duke-stat">
+            <span class="duke-stat__number">500K+</span>
+            <span class="duke-stat__label">Instagram Engagements</span>
+          </div>
+          <div class="duke-stat">
+            <span class="duke-stat__number">300K+</span>
+            <span class="duke-stat__label">TikTok Likes</span>
+          </div>
+        </div>
+        <div class="duke-platform-stats">
+          <div class="duke-platform">
+            <div class="duke-platform__header">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+              <span>TikTok</span>
+            </div>
+            <div class="duke-platform__numbers">
+              <div><strong>23.7K</strong><span>Followers</span></div>
+              <div><strong>286K+</strong><span>Likes</span></div>
+              <div><strong>3M+</strong><span>Views</span></div>
+            </div>
+            <a href="https://www.tiktok.com/@thebluedevil" target="_blank" rel="noopener" class="duke-platform__link">@thebluedevil ↗</a>
+          </div>
+          <div class="duke-platform">
+            <div class="duke-platform__header">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              <span>Instagram</span>
+            </div>
+            <div class="duke-platform__numbers">
+              <div><strong>22.8K</strong><span>Followers</span></div>
+              <div><strong>500K+</strong><span>Engagements</span></div>
+              <div><strong>5M+</strong><span>Views</span></div>
+            </div>
+            <a href="https://www.instagram.com/thebluedevil/" target="_blank" rel="noopener" class="duke-platform__link">@thebluedevil ↗</a>
+          </div>
+        </div>
       </section>
     {/if}
 
@@ -1075,6 +1156,102 @@
   @media (max-width: 700px) {
     .csc-role, .csc-process, .insights-grid {
       grid-template-columns: 1fr;
+    }
+  }
+
+  /* Duke Athletics Stats */
+  .duke-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+  }
+  .duke-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  }
+  .duke-stat__number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .duke-stat__label {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-secondary, #888);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .duke-platform-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .duke-platform {
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-border, #e5e5e5);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .duke-platform__header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--color-text, #111);
+  }
+  .duke-platform__numbers {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .duke-platform__numbers div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .duke-platform__numbers strong {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--color-text, #111);
+  }
+  .duke-platform__numbers span {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary, #888);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .duke-platform__link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    margin-top: auto;
+  }
+  .duke-platform__link:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 700px) {
+    .duke-stats {
+      grid-template-columns: 1fr;
+    }
+    .duke-platform-stats {
+      grid-template-columns: 1fr;
+    }
+    .duke-stat__number {
+      font-size: 2.2rem;
     }
   }
 </style>
