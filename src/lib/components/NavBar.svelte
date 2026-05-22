@@ -16,7 +16,8 @@
     { href: '/projects/avia-games', label: 'AviaGames' },
     { href: '/projects/nba-analysis', label: 'NBA Data Science' },
     { href: '/projects/tiffany-rebrand', label: 'Tiffany & Co. Rebrand' },
-    { href: '/projects/imdb-regression', label: 'IMDb Regression' }
+    { href: '/projects/imdb-regression', label: 'IMDb Regression' },
+    { href: 'projects/duke-athletics', label: 'Duke Athletics Marketing'}
   ];
 
   function isActive(href) {
