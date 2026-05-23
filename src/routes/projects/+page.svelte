@@ -13,20 +13,20 @@
       logo: '/images/logos/Comcast_NBCUniversal_logo.svg',
       logos: null,
       logoSize: '40px',
-      keywords: ['comcast', 'nbcuniversal', 'kpi', 'dashboard', 'mysource', 'audio', 'engagement', 'channel', 'tableau', 'power bi', 'intern'],
+      keywords: ['comcast', 'nbcuniversal', 'kpi', 'dashboard', 'mysource', 'audio', 'engagement', 'channel', 'tableau', 'power bi', 'intern', 'fortune 50'],
     },
     {
-      slug: 'cantina',
-      title: 'Cantina',
-      subtitle: 'AI Social Platform — Trust & Safety',
-      role: 'Product Management Intern',
-      tags: ['Product Management', 'UX Research', 'Trust & Safety'],
-      accent: '#00B4B4',
-      year: '2024',
-      logo: '/images/cantina/cantinaLogo.png',
+      slug: 'avia-games',
+      title: 'AviaGames',
+      subtitle: 'PM and User Discovery Case 10M Users',
+      role: 'Lead Product Manager',
+      tags: ['Product Management', 'UX Research', 'Data Analysis', 'Prototyping'],
+      accent: '#5B008C',
+      year: '2026',
+      logo: '/images/logos/aviaLogo.png',
       logos: null,
-      logoSize: '30px',
-      keywords: ['cantina', 'trust', 'safety', 'ai', 'social', 'platform', 'wireframes', 'personas', 'roadmap', 'research', 'spice', 'content'],
+      logoSize: '60px',
+      keywords: ['aviagames', 'solitaire', 'mobile games', 'behavioral segmentation', 'consumer discovery', 'product strategy', 'duke product lab', 'cognitive'],
     },
     {
       slug: 'collegeswimconnect',
@@ -42,6 +42,19 @@
       keywords: ['collegeswimconnect', 'swimming', 'd1', 'postgresql', 'flask', 'python', 'railway', 'agile', 'mentor', 'recruit', 'database'],
     },
     {
+      slug: 'cantina',
+      title: 'Cantina',
+      subtitle: 'AI Social Platform — Trust & Safety',
+      role: 'Product Management Intern',
+      tags: ['Product Management', 'UX Research', 'Trust & Safety'],
+      accent: '#00B4B4',
+      year: '2024',
+      logo: '/images/cantina/cantinaLogo.png',
+      logos: null,
+      logoSize: '30px',
+      keywords: ['cantina', 'trust', 'safety', 'ai', 'social', 'platform', 'wireframes', 'personas', 'roadmap', 'research', 'spice', 'content'],
+    },
+    {
       slug: 'devil-exchange',
       title: 'Devil Exchange',
       subtitle: 'Duke Dining UX Case Study',
@@ -53,19 +66,6 @@
       logos: null,
       logoSize: '40px',
       keywords: ['devil exchange', 'duke', 'dining', 'meal plan', 'ux', 'figma', 'prototype', 'research', 'food points', 'peer to peer'],
-    },
-    {
-      slug: 'avia-games',
-      title: 'AviaGames',
-      subtitle: 'PM and User Discovery Case 10M Users',
-      role: 'Lead Product Manager',
-      tags: ['Product Management', 'UX Research', 'Data Analysis', 'Prototyping'],
-      accent: '#5B008C',
-      year: '2026',
-      logo: '/images/logos/aviaLogo.png',
-      logos: null,
-      logoSize: '60px',
-      keywords: ['aviagames', 'solitaire', 'mobile games', 'behavioral segmentation', 'consumer discovery', 'product strategy', 'duke product lab', 'cognitive'],
     },
   ];
 
@@ -82,19 +82,6 @@
       logos: null,
       logoSize: '40px',
       keywords: ['duke athletics', 'tiktok', 'instagram', 'marketing', 'content', 'social media', 'video', 'reach', 'views', 'blue devil', 'engagement', 'content creation', 'cross-platform'],
-    },
-    {
-      slug: 'tiffany-rebrand',
-      title: 'Tiffany & Co. Rebrand',
-      subtitle: 'Timothy & Co. — Male Market Expansion',
-      role: 'Brand Strategist & Market Researcher',
-      tags: ['Brand Strategy', 'Market Research', 'Consumer Insights', 'Product Strategy'],
-      accent: '#2D5A27',
-      year: '2024',
-      logo: '/images/logos/timothyLogo.png',
-      logos: null,
-      logoSize: '40px',
-      keywords: ['tiffany', 'rebrand', 'brand strategy', 'market research', 'timothy', 'luxury', 'jewelry', 'male', 'consumer insights', 'positioning', 'survey', 'primary research', 'duke', 'marketing'],
     },
     {
       slug: 'nba-analysis',
@@ -128,6 +115,19 @@
       logoSize: '40px',
       keywords: ['imdb', 'regression', 'r', 'statistics', 'data science', 'eda', 'logistic', 'ratings', 'audience', 'critic', 'metascore', 'auc', 'roc', 'classification', 'feature engineering', 'duke', 'statistical science'],
     },
+    {
+      slug: 'tiffany-rebrand',
+      title: 'Tiffany & Co. Rebrand',
+      subtitle: 'Timothy & Co. — Male Market Expansion',
+      role: 'Brand Strategist & Market Researcher',
+      tags: ['Brand Strategy', 'Market Research', 'Consumer Insights', 'Product Strategy'],
+      accent: '#2D5A27',
+      year: '2024',
+      logo: '/images/logos/timothyLogo.png',
+      logos: null,
+      logoSize: '40px',
+      keywords: ['tiffany', 'rebrand', 'brand strategy', 'market research', 'timothy', 'luxury', 'jewelry', 'male', 'consumer insights', 'positioning', 'survey', 'primary research', 'duke', 'marketing'],
+    },
   ];
 
   function matches(project) {
@@ -145,6 +145,7 @@
   let filteredPmUx = $derived(pmUx.filter(matches));
   let filteredBrandData = $derived(brandData.filter(matches));
   let totalResults = $derived(filteredPmUx.length + filteredBrandData.length);
+  let isFiltering = $derived(searchQuery.trim().length > 0);
 </script>
 
 <svelte:head>
@@ -157,7 +158,7 @@
       <p class="projects-hero__eyebrow">Portfolio</p>
       <h1>My <span class="accent">Work</span></h1>
       <p class="projects-hero__sub">
-        Product, design, data, and brand projects from internships, coursework, and ventures.
+        Product, data, and brand work spanning Fortune 50 and startup internships, research, and independent ventures. Click any card below to explore — every page has a built-in AI chatbot you can talk to.
       </p>
     </div>
   </div>
@@ -182,87 +183,174 @@
       </div>
     {/if}
 
-    {#if filteredPmUx.length > 0}
-      <section class="category">
-        <div class="category__header">
-          <span class="category__label">Product Management & UX</span>
-          {#if searchQuery}
+    <!-- Two-column layout when not filtering, stacked when filtering -->
+    {#if !isFiltering}
+      <div class="two-col-layout">
+
+        <!-- LEFT: Product Management & UX -->
+        {#if filteredPmUx.length > 0}
+          <section class="category">
+            <div class="category__header">
+              <span class="category__label">Product Management & UX</span>
+            </div>
+            <div class="grid grid--pm">
+              {#each filteredPmUx as project}
+                <a href="/projects/{project.slug}" class="card" style="--accent: {project.accent}">
+                  <div class="card__top">
+                    <span class="card__year">{project.year}</span>
+                    <span class="card__role">{project.role}</span>
+                  </div>
+                  {#if project.logos}
+                    <div class="card__logo">
+                      {#each project.logos as l}
+                        <img src={l.src} alt={l.alt} style="max-height: {project.logoSize ?? '36px'}" />
+                      {/each}
+                    </div>
+                  {:else if project.logo}
+                    <div class="card__logo">
+                      <img src={project.logo} alt="{project.title} logo" style="max-height: {project.logoSize ?? '40px'}" />
+                    </div>
+                  {/if}
+                  <h3 class="card__title">{project.title}</h3>
+                  <p class="card__subtitle">{project.subtitle}</p>
+                  <div class="card__tags">
+                    {#each project.tags as tag}
+                      <span class="card__tag">{tag}</span>
+                    {/each}
+                  </div>
+                  <div class="card__arrow">→</div>
+                  <div class="card__accent-bar"></div>
+                </a>
+              {/each}
+            </div>
+          </section>
+        {/if}
+
+        <!-- Divider -->
+        <div class="two-col-divider"></div>
+
+        <!-- RIGHT: Brand, Media & Data Analytics -->
+        {#if filteredBrandData.length > 0}
+          <section class="category">
+            <div class="category__header">
+              <span class="category__label">Brand, Media & Data Analytics</span>
+            </div>
+            <div class="grid grid--brand">
+              {#each filteredBrandData as project}
+                <a href="/projects/{project.slug}" class="card" style="--accent: {project.accent}">
+                  <div class="card__top">
+                    <span class="card__year">{project.year}</span>
+                    <span class="card__role">{project.role}</span>
+                  </div>
+                  {#if project.logos}
+                    <div class="card__logo">
+                      {#each project.logos as l}
+                        <img src={l.src} alt={l.alt} style="max-height: {project.logoSize ?? '36px'}" />
+                      {/each}
+                    </div>
+                  {:else if project.logo}
+                    <div class="card__logo">
+                      <img src={project.logo} alt="{project.title} logo" style="max-height: {project.logoSize ?? '40px'}" />
+                    </div>
+                  {/if}
+                  <h3 class="card__title">{project.title}</h3>
+                  <p class="card__subtitle">{project.subtitle}</p>
+                  <div class="card__tags">
+                    {#each project.tags as tag}
+                      <span class="card__tag">{tag}</span>
+                    {/each}
+                  </div>
+                  <div class="card__arrow">→</div>
+                  <div class="card__accent-bar"></div>
+                </a>
+              {/each}
+            </div>
+          </section>
+        {/if}
+
+      </div>
+
+    {:else}
+      <!-- Search results: stacked full-width -->
+      {#if filteredPmUx.length > 0}
+        <section class="category">
+          <div class="category__header">
+            <span class="category__label">Product Management & UX</span>
             <span class="category__count">{filteredPmUx.length} result{filteredPmUx.length !== 1 ? 's' : ''}</span>
-          {/if}
-        </div>
-        <div class="grid">
-          {#each filteredPmUx as project}
-            <a href="/projects/{project.slug}" class="card" style="--accent: {project.accent}">
-              <div class="card__top">
-                <span class="card__year">{project.year}</span>
-                <span class="card__role">{project.role}</span>
-              </div>
-              {#if project.logos}
-                <div class="card__logo">
-                  {#each project.logos as l}
-                    <img src={l.src} alt={l.alt} style="max-height: {project.logoSize ?? '36px'}" />
+          </div>
+          <div class="grid">
+            {#each filteredPmUx as project}
+              <a href="/projects/{project.slug}" class="card" style="--accent: {project.accent}">
+                <div class="card__top">
+                  <span class="card__year">{project.year}</span>
+                  <span class="card__role">{project.role}</span>
+                </div>
+                {#if project.logos}
+                  <div class="card__logo">
+                    {#each project.logos as l}
+                      <img src={l.src} alt={l.alt} style="max-height: {project.logoSize ?? '36px'}" />
+                    {/each}
+                  </div>
+                {:else if project.logo}
+                  <div class="card__logo">
+                    <img src={project.logo} alt="{project.title} logo" style="max-height: {project.logoSize ?? '40px'}" />
+                  </div>
+                {/if}
+                <h3 class="card__title">{project.title}</h3>
+                <p class="card__subtitle">{project.subtitle}</p>
+                <div class="card__tags">
+                  {#each project.tags as tag}
+                    <span class="card__tag">{tag}</span>
                   {/each}
                 </div>
-              {:else if project.logo}
-                <div class="card__logo">
-                  <img src={project.logo} alt="{project.title} logo" style="max-height: {project.logoSize ?? '40px'}" />
+                <div class="card__arrow">→</div>
+                <div class="card__accent-bar"></div>
+              </a>
+            {/each}
+          </div>
+        </section>
+      {/if}
+
+      {#if filteredBrandData.length > 0}
+        <section class="category">
+          <div class="category__header">
+            <span class="category__label">Brand, Media & Data Analytics</span>
+            <span class="category__count">{filteredBrandData.length} result{filteredBrandData.length !== 1 ? 's' : ''}</span>
+          </div>
+          <div class="grid">
+            {#each filteredBrandData as project}
+              <a href="/projects/{project.slug}" class="card" style="--accent: {project.accent}">
+                <div class="card__top">
+                  <span class="card__year">{project.year}</span>
+                  <span class="card__role">{project.role}</span>
                 </div>
-              {/if}
-              <h3 class="card__title">{project.title}</h3>
-              <p class="card__subtitle">{project.subtitle}</p>
-              <div class="card__tags">
-                {#each project.tags as tag}
-                  <span class="card__tag">{tag}</span>
-                {/each}
-              </div>
-              <div class="card__arrow">→</div>
-              <div class="card__accent-bar"></div>
-            </a>
-          {/each}
-        </div>
-      </section>
+                {#if project.logos}
+                  <div class="card__logo">
+                    {#each project.logos as l}
+                      <img src={l.src} alt={l.alt} style="max-height: {project.logoSize ?? '36px'}" />
+                    {/each}
+                  </div>
+                {:else if project.logo}
+                  <div class="card__logo">
+                    <img src={project.logo} alt="{project.title} logo" style="max-height: {project.logoSize ?? '40px'}" />
+                  </div>
+                {/if}
+                <h3 class="card__title">{project.title}</h3>
+                <p class="card__subtitle">{project.subtitle}</p>
+                <div class="card__tags">
+                  {#each project.tags as tag}
+                    <span class="card__tag">{tag}</span>
+                  {/each}
+                </div>
+                <div class="card__arrow">→</div>
+                <div class="card__accent-bar"></div>
+              </a>
+            {/each}
+          </div>
+        </section>
+      {/if}
     {/if}
 
-    {#if filteredBrandData.length > 0}
-      <section class="category">
-        <div class="category__header">
-          <span class="category__label">Brand, Media & Data Analytics</span>
-          {#if searchQuery}
-            <span class="category__count">{filteredBrandData.length} result{filteredBrandData.length !== 1 ? 's' : ''}</span>
-          {/if}
-        </div>
-        <div class="grid grid--four">
-          {#each filteredBrandData as project}
-            <a href="/projects/{project.slug}" class="card" style="--accent: {project.accent}">
-              <div class="card__top">
-                <span class="card__year">{project.year}</span>
-                <span class="card__role">{project.role}</span>
-              </div>
-              {#if project.logos}
-                <div class="card__logo">
-                  {#each project.logos as l}
-                    <img src={l.src} alt={l.alt} style="max-height: {project.logoSize ?? '36px'}" />
-                  {/each}
-                </div>
-              {:else if project.logo}
-                <div class="card__logo">
-                  <img src={project.logo} alt="{project.title} logo" style="max-height: {project.logoSize ?? '40px'}" />
-                </div>
-              {/if}
-              <h3 class="card__title">{project.title}</h3>
-              <p class="card__subtitle">{project.subtitle}</p>
-              <div class="card__tags">
-                {#each project.tags as tag}
-                  <span class="card__tag">{tag}</span>
-                {/each}
-              </div>
-              <div class="card__arrow">→</div>
-              <div class="card__accent-bar"></div>
-            </a>
-          {/each}
-        </div>
-      </section>
-    {/if}
   </div>
 </div>
 
@@ -274,9 +362,9 @@
   }
 
   .projects-hero {
-    padding: 3.5rem 0 1.5rem;
+    padding: 2rem 0 1rem;
     background: var(--color-ink);
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
   }
 
   .projects-hero__eyebrow {
@@ -298,9 +386,9 @@
   .accent { color: var(--color-gold); }
 
   .projects-hero__sub {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.45);
-    max-width: 48ch;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.75);
+    max-width: none;
   }
 
   .container {
@@ -317,7 +405,7 @@
     border: 1px solid var(--color-border);
     border-radius: 100px;
     padding: 0.6rem 1.25rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     transition: border-color 0.2s ease;
   }
 
@@ -368,21 +456,43 @@
     font-size: 0.9rem;
   }
 
+  /* Two-column layout */
+  .two-col-layout {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 0;
+    align-items: start;
+  }
+
+  .two-col-layout > .category:first-child {
+    padding-right: 1.5rem;
+  }
+
+  .two-col-layout > .category:last-child {
+    padding-left: 1.5rem;
+  }
+
+  .two-col-divider {
+    background: var(--color-border);
+    align-self: stretch;
+    min-height: 100%;
+  }
+
   .category {
-    margin-bottom: 2.5rem;
+    margin-bottom: 0;
   }
 
   .category__header {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--color-ink);
   }
 
   .category__label {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -396,22 +506,32 @@
     letter-spacing: 0.06em;
   }
 
+  /* PM grid: 3 across, then 2 centered below */
+  .grid--pm {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+  }
+
+  /* Brand grid: 2x2 */
+  .grid--brand {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  /* Search results grid */
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 1rem;
   }
 
-  .grid--four {
-    grid-template-columns: repeat(4, minmax(0, 240px));
-    justify-content: center;
-  }
-
   .card {
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 1.25rem;
+    padding: 0.75rem;
     background: white;
     border: 1px solid var(--color-border);
     border-radius: 10px;
@@ -431,7 +551,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.4rem;
   }
 
   .card__year {
@@ -452,7 +572,7 @@
   }
 
   .card__logo {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.4rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -467,17 +587,17 @@
 
   .card__title {
     font-family: var(--font-display);
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 400;
     color: var(--color-ink);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
     line-height: 1.2;
   }
 
   .card__subtitle {
-    font-size: 0.78rem;
+    font-size: 0.73rem;
     color: var(--color-muted);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.4rem;
     line-height: 1.4;
     max-width: none;
   }
@@ -487,7 +607,7 @@
     flex-wrap: wrap;
     gap: 0.3rem;
     margin-top: auto;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.3rem;
   }
 
   .card__tag {
@@ -532,15 +652,39 @@
     transform: scaleX(1);
   }
 
-  @media (max-width: 900px) {
-    .grid--four {
-      grid-template-columns: repeat(2, 1fr);
-      justify-content: unset;
+  /* Responsive: stack columns below 1024px */
+  @media (max-width: 1024px) {
+    .two-col-layout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .two-col-divider {
+      display: none;
+    }
+    .two-col-layout > .category:first-child {
+      padding-right: 0;
+    }
+    .two-col-layout > .category:last-child {
+      padding-left: 0;
+    }
+    .grid--pm {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .grid--brand {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 
-  @media (max-width: 500px) {
-    .grid--four {
+  @media (max-width: 700px) {
+    .grid--pm,
+    .grid--brand {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .grid--pm,
+    .grid--brand {
       grid-template-columns: 1fr;
     }
   }
