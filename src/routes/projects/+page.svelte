@@ -362,7 +362,7 @@
   }
 
   .projects-hero {
-    padding: 2rem 0 1rem;
+    padding: 5rem 0 1rem;
     background: var(--color-ink);
     margin-bottom: 1.25rem;
   }
