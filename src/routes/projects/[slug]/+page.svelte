@@ -233,7 +233,7 @@
       deliverables: [
         { label: 'TikTok Account (@thebluedevil)', detail: 'Grew account to 23.7K followers and 286.2K+ likes from scratch — producing short-form video content across sporting events, campus life, and trending formats' },
         { label: 'Instagram Account (@thebluedevil)', detail: 'Grew account to 22.8K followers — amassing 5M+ video views and 500K+ engagements, with a single month reaching 513K accounts (+5,999% growth)' },
-        { label: 'Cross-Platform Content Strategy', detail: "Developed and executed a dual-platform content calendar tailored to each platform's audience behavior — Reels and photo carousels on Instagram, trend-driven short video on TikTok" },
+        { label: "Cross-Platform Content Strategy', detail: 'Developed and executed a dual-platform content calendar tailored to each platform's audience behavior — Reels and photo carousels on Instagram, trend-driven short video on TikTok" },
         { label: 'Viral Content', detail: 'Produced multiple high-performing videos exceeding 100K views individually, including a 413.8K-view TikTok and a 1.7M-view Instagram Reel' },
       ],
       demos: [],
@@ -352,6 +352,7 @@
   }
 
   let showSuggestions = $derived(messages.length <= 1);
+  let chatOpen = $state(false);
 </script>
 
 <svelte:head>
@@ -627,7 +628,20 @@
     </div>
   </div>
 
-  <aside class="chat-sidebar">
+  <!-- Mobile floating chat button -->
+  <button class="chat-fab" onclick={() => chatOpen = true} aria-label="Open chat">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+    <span>Ask AI</span>
+  </button>
+
+  <!-- Chat overlay backdrop (mobile) -->
+  {#if chatOpen}
+    <div class="chat-backdrop" onclick={() => chatOpen = false}></div>
+  {/if}
+
+  <aside class="chat-sidebar" class:chat-sidebar--open={chatOpen}>
     <div class="chat-header">
       <div class="chat-header__left">
         <div class="chat-header__dot"></div>
@@ -636,6 +650,7 @@
         </div>
       </div>
       <span class="chat-header__badge">AI</span>
+      <button class="chat-close-btn" onclick={() => chatOpen = false} aria-label="Close chat">✕</button>
     </div>
 
     <div class="chat-welcome">
@@ -1252,6 +1267,128 @@
     }
     .duke-stat__number {
       font-size: 2.2rem;
+    }
+  }
+
+  /* ── Mobile layout ── */
+  .chat-fab {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    /* Stack layout: no sidebar, just main content */
+    .project-layout {
+      flex-direction: column;
+    }
+
+    /* Hero image stacks below text */
+    .project-hero__inner {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .project-hero__image {
+      width: 100%;
+    }
+
+    /* Sidebar becomes full-screen overlay */
+    .chat-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      min-width: unset;
+      height: 100%;
+      z-index: 200;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    .chat-sidebar--open {
+      transform: translateY(0);
+    }
+
+    /* Backdrop */
+    .chat-backdrop {
+      display: none;
+    }
+
+    /* Floating button */
+    .chat-fab {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 100;
+      background: var(--color-gold);
+      color: white;
+      border: none;
+      border-radius: 100px;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: var(--font-body);
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .chat-fab:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+    }
+
+    /* Close button visible on mobile */
+    .chat-close-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      border-radius: 50%;
+      color: white;
+      font-size: 0.85rem;
+      cursor: pointer;
+      margin-left: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    /* Container padding tighter on mobile */
+    .container {
+      padding: 0 1rem;
+    }
+
+    /* Section padding tighter */
+    .section {
+      padding: 2rem 0;
+    }
+
+    /* Hero padding */
+    .project-hero {
+      padding: 2rem 0 2rem;
+    }
+
+    /* h2 size */
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    /* Insights grid single col on mobile already handled above */
+  }
+
+  /* Desktop: hide close button and fab */
+  @media (min-width: 901px) {
+    .chat-close-btn {
+      display: none;
+    }
+    .chat-fab {
+      display: none;
+    }
+    .chat-backdrop {
+      display: none;
     }
   }
 </style>
