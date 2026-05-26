@@ -43,7 +43,7 @@
 
       <div class="about-links">
         <a href="/projects" class="btn-primary">View My Work</a>
-        <a href="mailto:cj@duke.edu" class="btn-secondary">Get in Touch</a>
+        <a href="/contact" class="btn-secondary">Get in Touch</a>
       </div>
 
     </div>
