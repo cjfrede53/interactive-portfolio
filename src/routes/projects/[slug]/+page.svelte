@@ -50,7 +50,7 @@
         { label: '6-Milestone Roadmap', detail: 'End-to-end product roadmap from backend content scaling through beta rollout and public launch' },
       ],
       demos: [
-        { title: 'Cantina Safety Feature Demo', youtubeId: 'RA7ClKAolRU', description: 'Final prototype showcasing the spice-level slider at login and in-room content warnings, directly addressing user trust and safety concerns.' },
+        { title: 'Cantina Safety Feature Demo', youtubeId: 'B2SdIHMdqN4', description: 'Final prototype showcasing the spice-level slider at login and in-room content warnings, directly addressing user trust and safety concerns.' },
       ],
       pdf: '/images/cantina/cantina_slides.pdf',
       pdfTitle: 'Full',
