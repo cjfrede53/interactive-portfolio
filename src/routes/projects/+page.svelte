@@ -232,7 +232,7 @@
 
         <!-- LEFT: Product Management & UX -->
         {#if filteredPmUx.length > 0}
-          <section class="category">
+          <section class="category col--pm">
             <div class="category__header">
               <span class="category__label">Product Management & UX</span>
             </div>
@@ -272,9 +272,9 @@
         <!-- Divider -->
         <div class="two-col-divider"></div>
 
-        <!-- RIGHT: Brand, Media & Data Analytics -->
+        <!-- MIDDLE: Brand, Media & Data Analytics -->
         {#if filteredBrandData.length > 0}
-          <section class="category">
+          <section class="category col--brand">
             <div class="category__header">
               <span class="category__label">Brand, Media & Data Analytics</span>
             </div>
@@ -311,41 +311,40 @@
           </section>
         {/if}
 
-      </div>
+        <!-- Divider -->
+        <div class="two-col-divider"></div>
 
-      {#if filteredLiveBuilds.length > 0}
-        <section class="category category--live">
-          <div class="category__header">
-            <span class="category__label">Live Builds</span>
-            <span class="category__note">Opens in a new tab</span>
-          </div>
-          <div class="grid grid--live">
-            {#each filteredLiveBuilds as project}
-              <a
-                href={project.url}
-                class="card card--external"
-                style="--accent: {project.accent}"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div class="card__top">
-                  <span class="card__year">{project.year}</span>
-                  <span class="card__role">{project.role}</span>
-                </div>
-                <h3 class="card__title">{project.title}</h3>
-                <p class="card__subtitle">{project.subtitle}</p>
-                <div class="card__tags">
-                  {#each project.tags as tag}
-                    <span class="card__tag">{tag}</span>
-                  {/each}
-                </div>
-                <div class="card__arrow">↗</div>
-                <div class="card__accent-bar"></div>
-              </a>
-            {/each}
-          </div>
-        </section>
-      {/if}
+        <!-- RIGHT RAIL: live builds -->
+        {#if filteredLiveBuilds.length > 0}
+          <section class="category col--live">
+            <div class="category__header">
+              <span class="category__label">Live Projects Built!</span>
+            </div>
+            <p class="live-rail__note">Each opens in a new tab</p>
+            <div class="grid grid--live">
+              {#each filteredLiveBuilds as project}
+                <a
+                  href={project.url}
+                  class="card card--external card--rail"
+                  style="--accent: {project.accent}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="card__top">
+                    <span class="card__year">{project.year}</span>
+                    <span class="card__role">{project.role}</span>
+                  </div>
+                  <h3 class="card__title">{project.title}</h3>
+                  <p class="card__subtitle">{project.subtitle}</p>
+                  <div class="card__arrow">↗</div>
+                  <div class="card__accent-bar"></div>
+                </a>
+              {/each}
+            </div>
+          </section>
+        {/if}
+
+      </div>
 
     {:else}
       <!-- Search results: stacked full-width -->
@@ -571,17 +570,21 @@
   /* Two-column layout */
   .two-col-layout {
     display: grid;
-    grid-template-columns: 1fr 1px 1fr;
+    grid-template-columns: 1fr 1px 1fr 1px minmax(200px, 0.62fr);
     gap: 0;
     align-items: start;
   }
 
-  .two-col-layout > .category:first-child {
-    padding-right: 1.5rem;
+  .col--pm {
+    padding-right: 1.25rem;
   }
 
-  .two-col-layout > .category:last-child {
-    padding-left: 1.5rem;
+  .col--brand {
+    padding: 0 1.25rem;
+  }
+
+  .col--live {
+    padding-left: 1.25rem;
   }
 
   .two-col-divider {
@@ -646,8 +649,20 @@
 
   .grid--live {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 0.6rem;
+  }
+
+  .live-rail__note {
+    margin: 0 0 0.6rem;
+    font-size: 0.68rem;
+    color: var(--color-gold);
+    letter-spacing: 0.04em;
+  }
+
+  /* Rail cards are compact: no logo block, no tags */
+  .card--rail {
+    min-height: 0;
   }
 
   .card--external .card__arrow {
@@ -795,11 +810,10 @@
     .two-col-divider {
       display: none;
     }
-    .two-col-layout > .category:first-child {
-      padding-right: 0;
-    }
-    .two-col-layout > .category:last-child {
-      padding-left: 0;
+    .col--pm,
+    .col--brand,
+    .col--live {
+      padding: 0;
     }
     .grid--pm {
       grid-template-columns: repeat(3, 1fr);
