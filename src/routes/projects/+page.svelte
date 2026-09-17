@@ -130,6 +130,48 @@
     },
   ];
 
+  const liveBuilds = [
+    {
+      url: 'https://cjfrede53.github.io/duke-unc-basketball-app/',
+      title: 'The Scouting Report',
+      subtitle: 'Duke–UNC Adaptive Quiz · 2025–26 Rosters',
+      role: 'Live Demo',
+      tags: ['SvelteKit', 'Chart.js', 'Mastery Tracking'],
+      accent: '#003087',
+      year: '2026',
+      logo: null,
+      logos: null,
+      logoSize: '40px',
+      keywords: ['duke', 'unc', 'basketball', 'quiz', 'study app', 'sveltekit', 'chart.js', 'mastery', 'spaced repetition', 'stats', 'study app', 'scouting report', 'rosters', 'github pages', 'live'],
+    },
+    {
+      url: 'https://cjfrede53.github.io/cameron-indoor-3d/',
+      title: 'Courtside at Cameron',
+      subtitle: 'Walkable 3D Model of Cameron Indoor Stadium',
+      role: 'Live Demo',
+      tags: ['Three.js', 'WebGL', 'GitHub Actions'],
+      accent: '#001A57',
+      year: '2026',
+      logo: null,
+      logos: null,
+      logoSize: '40px',
+      keywords: ['cameron indoor', 'stadium', '3d', 'three.js', 'webgl', 'duke', 'basketball', 'ci/cd', 'github actions', 'courtside', 'stadium tour', 'virtual tour', 'github pages', 'live'],
+    },
+    {
+      url: 'https://cjfrede53.github.io/duke-unc-image-classifier/',
+      title: 'Two Shades of Blue',
+      subtitle: 'Duke–UNC Image Classifier · Biomimetic Response',
+      role: 'Live Demo',
+      tags: ['TensorFlow.js', 'Computer Vision', 'Creative Coding'],
+      accent: '#4B9CD3',
+      year: '2026',
+      logo: null,
+      logos: null,
+      logoSize: '40px',
+      keywords: ['classifier', 'image classification', 'machine learning', 'computer vision', 'tensorflow.js', 'tensorflow', 'teachable machine', 'duke', 'unc', 'biomimicry', 'animation', 'on-device', 'client-side', 'no backend', 'inference', 'model', 'carolina blue', 'duke blue', 'rivalry', 'github pages', 'live'],
+    },
+  ];
+
   function matches(project) {
     if (!searchQuery.trim()) return true;
     const q = searchQuery.toLowerCase();
@@ -144,7 +186,8 @@
 
   let filteredPmUx = $derived(pmUx.filter(matches));
   let filteredBrandData = $derived(brandData.filter(matches));
-  let totalResults = $derived(filteredPmUx.length + filteredBrandData.length);
+  let filteredLiveBuilds = $derived(liveBuilds.filter(matches));
+  let totalResults = $derived(filteredPmUx.length + filteredBrandData.length + filteredLiveBuilds.length);
   let isFiltering = $derived(searchQuery.trim().length > 0);
 </script>
 
@@ -270,6 +313,40 @@
 
       </div>
 
+      {#if filteredLiveBuilds.length > 0}
+        <section class="category category--live">
+          <div class="category__header">
+            <span class="category__label">Live Builds</span>
+            <span class="category__note">Opens in a new tab</span>
+          </div>
+          <div class="grid grid--live">
+            {#each filteredLiveBuilds as project}
+              <a
+                href={project.url}
+                class="card card--external"
+                style="--accent: {project.accent}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="card__top">
+                  <span class="card__year">{project.year}</span>
+                  <span class="card__role">{project.role}</span>
+                </div>
+                <h3 class="card__title">{project.title}</h3>
+                <p class="card__subtitle">{project.subtitle}</p>
+                <div class="card__tags">
+                  {#each project.tags as tag}
+                    <span class="card__tag">{tag}</span>
+                  {/each}
+                </div>
+                <div class="card__arrow">↗</div>
+                <div class="card__accent-bar"></div>
+              </a>
+            {/each}
+          </div>
+        </section>
+      {/if}
+
     {:else}
       <!-- Search results: stacked full-width -->
       {#if filteredPmUx.length > 0}
@@ -343,6 +420,41 @@
                   {/each}
                 </div>
                 <div class="card__arrow">→</div>
+                <div class="card__accent-bar"></div>
+              </a>
+            {/each}
+          </div>
+        </section>
+      {/if}
+
+      {#if filteredLiveBuilds.length > 0}
+        <section class="category category--live">
+          <div class="category__header">
+            <span class="category__label">Live Builds</span>
+            <span class="category__note">Opens in a new tab</span>
+            <span class="category__count">{filteredLiveBuilds.length} result{filteredLiveBuilds.length !== 1 ? 's' : ''}</span>
+          </div>
+          <div class="grid ">
+            {#each filteredLiveBuilds as project}
+              <a
+                href={project.url}
+                class="card card--external"
+                style="--accent: {project.accent}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="card__top">
+                  <span class="card__year">{project.year}</span>
+                  <span class="card__role">{project.role}</span>
+                </div>
+                <h3 class="card__title">{project.title}</h3>
+                <p class="card__subtitle">{project.subtitle}</p>
+                <div class="card__tags">
+                  {#each project.tags as tag}
+                    <span class="card__tag">{tag}</span>
+                  {/each}
+                </div>
+                <div class="card__arrow">↗</div>
                 <div class="card__accent-bar"></div>
               </a>
             {/each}
@@ -520,6 +632,28 @@
     gap: 0.6rem;
   }
 
+  /* Live builds: full-width band under the two columns */
+  .category--live {
+    margin-top: 1.75rem;
+  }
+
+  .category__note {
+    font-size: 0.65rem;
+    color: var(--color-gold);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+
+  .grid--live {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+  }
+
+  .card--external .card__arrow {
+    opacity: 1;
+  }
+
   /* Search results grid */
   .grid {
     display: grid;
@@ -676,6 +810,10 @@
   }
 
   @media (max-width: 700px) {
+    .grid--live {
+      grid-template-columns: 1fr;
+    }
+
     .grid--pm,
     .grid--brand {
       grid-template-columns: repeat(2, 1fr);
